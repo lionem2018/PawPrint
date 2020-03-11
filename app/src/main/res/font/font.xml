@@ -9,4 +9,9 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/binggraemelonabold"/>
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/notosanssemibold"/>
 </font-family>
