@@ -95,8 +95,8 @@ public class SplashActivity extends BaseActivity {
     public void startNextAcivity(){
         // 다음 Acivity로 전환
         startActivity(new Intent(getApplication(), MainActivity.class));
-        // Acivity 전환 효과 제거
-        overridePendingTransition(0, 0);
+        // Acivity 전환 효과
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
 
         // 스플래시 액티비티를 스텍에서 제거
         SplashActivity.this.finish();

@@ -5,7 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#176EE0</item>
+
+        <item name="colorControlNormal">#BCBCBC</item>
 
         <!-- 상태바 배경색 변경-->
         <item name="android:statusBarColor">#F2F2F2</item>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <LinearLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="16dp" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="114dp"
+            android:layout_height="33.18dp"
+            android:background="@drawable/title"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신의 반려동물을 \n 소개해주세요"
+            android:textAlignment="center"
+            android:textColor="@color/pageNameColor"
+            android:fontFamily="@font/lottemartdreambold"
+            android:textSize="35dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="어떤 반려 동물인가요?"
+                android:textSize="20dp"
+                android:fontFamily="@font/lottemartdreambold"
+                android:textColor="@color/questionColor"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"/>
+
+            <EditText
+                android:id="@+id/edit_text_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="견종/묘종을 적어주세요 (최대 12자)"
+                android:textColorHint="@color/editTextHintColor"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanumgothic"
+                android:maxLength="12"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12자 이내로 작성해주세요"
+                android:textSize="12dp"
+                android:fontFamily="@font/nanumgothic"
+                android:textColor="@color/warningTextColor"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이름이 어떻게 되나요?"
+                android:textSize="20dp"
+                android:fontFamily="@font/lottemartdreambold"
+                android:textColor="@color/questionColor"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"/>
+
+            <EditText
+                android:id="@+id/edit_text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:hint="이름이나 별명을 적어주세요 (최대 8자)"
+                android:textColorHint="@color/editTextHintColor"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanumgothic"
+                android:maxLength="8"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8자 이내로 작성해주세요"
+                android:textSize="12dp"
+                android:fontFamily="@font/nanumgothic"
+                android:textColor="@color/warningTextColor"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사진을 등록해주세요"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/lottemartdreambold"
+                    android:textColor="@color/questionColor"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사진을 꼭 등록해주세요"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/nanumgothic"
+                    android:textColor="@color/warningTextColor"/>
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_view_pet"
+                android:layout_alignParentRight="true"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/button_pick_picture"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <View
+                android:id="@+id/view_page_one"
+                android:layout_width="45dp"
+                android:layout_height="3dp"
+                android:background="#464646"/>
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="3dp" />
+
+            <View
+                android:id="@+id/view_page_two"
+                android:layout_width="45dp"
+                android:layout_height="3dp"
+                android:background="#D7D7D7"/>
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="3dp" />
+
+            <View
+                android:id="@+id/view_page_three"
+                android:layout_width="45dp"
+                android:layout_height="3dp"
+                android:background="#D7D7D7"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:text="다음으로"
+            android:textSize="20dp"
+            android:fontFamily="@font/nanumgothic"
+            android:textColorHint="#E5E5E5"
+            android:visibility="invisible"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

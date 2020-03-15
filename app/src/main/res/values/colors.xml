@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="titleColor">#444444</color>
+    <color name="pageNameColor">#5B5B5B</color>
+    <color name="questionColor">#575757</color>
+    <color name="editTextHintColor">#9E9E9E</color>
+    <color name="warningTextColor">#D22E2E</color>
 </resources>
