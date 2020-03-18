@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="32dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별이 어떻게 되나요?"
+            android:textSize="20dp"
+            android:fontFamily="@font/lottemartdreambold"
+            android:textColor="@color/questionColor"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"/>
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="남자아이"
+                android:fontFamily="@font/nanumgothic"
+                android:textSize="16dp"/>
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="여자아이"
+                android:fontFamily="@font/nanumgothic"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="생일이 언제인가요?"
+            android:textSize="20dp"
+            android:fontFamily="@font/lottemartdreambold"
+            android:textColor="@color/questionColor"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+
+            <EditText
+                android:id="@+id/edit_text_birthday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:hint="날짜를 선택해주세요"
+                android:textColorHint="@color/editTextHintColor"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanumgothic"
+                android:maxLength="8"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/button_cal_birthday"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/cal_icon"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="언제 가족이 되었나요?"
+            android:textSize="20dp"
+            android:fontFamily="@font/lottemartdreambold"
+            android:textColor="@color/questionColor"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+
+            <EditText
+                android:id="@+id/edit_text_adopt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="16dp"
+                android:hint="날짜를 선택해주세요"
+                android:textColorHint="@color/editTextHintColor"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanumgothic"
+                android:maxLength="8"
+                android:enabled="false"/>
+
+            <Button
+                android:id="@+id/button_cal_adopt"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/cal_icon"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

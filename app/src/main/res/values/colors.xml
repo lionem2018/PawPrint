@@ -9,4 +9,7 @@
     <color name="questionColor">#575757</color>
     <color name="editTextHintColor">#9E9E9E</color>
     <color name="warningTextColor">#D22E2E</color>
+
+    <color name="buttonInvisibleStateColor">#D7D7D7</color>
+    <color name="buttonVisibleStateColor">#464646</color>
 </resources>
