@@ -12,12 +12,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.Toast;
-
-import com.haru.pawprint.BaseActivity;
-import com.haru.pawprint.MainActivity;
-import com.haru.pawprint.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,9 +89,10 @@ public class SplashActivity extends BaseActivity {
 
     public void startNextAcivity(){
         // 다음 Acivity로 전환
-        startActivity(new Intent(getApplication(), MainActivity.class));
+        startActivity(new Intent(getApplication(), RegisterPetActivity.class));
         // Acivity 전환 효과
-        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
 
         // 스플래시 액티비티를 스텍에서 제거
         SplashActivity.this.finish();

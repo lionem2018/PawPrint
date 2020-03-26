@@ -25,6 +25,7 @@
             android:layout_height="32dp"/>
 
         <TextView
+            android:id="@+id/text_view_quesiton_title"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -176,7 +177,6 @@
         </RelativeLayout>
 
     </LinearLayout>
-
     -->
 
     <LinearLayout
@@ -231,7 +231,8 @@
                 android:text="이전"
                 android:textSize="20dp"
                 android:fontFamily="@font/nanumgothic"
-                android:textColorHint="#E5E5E5" />
+                android:textColorHint="#E5E5E5"
+                android:enabled="false"/>
 
             <View
                 android:layout_width="10dp"
