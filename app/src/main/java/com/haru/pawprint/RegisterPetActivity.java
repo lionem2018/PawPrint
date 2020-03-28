@@ -2,6 +2,7 @@ package com.haru.pawprint;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class RegisterPetActivity extends BaseActivity {
 
     FragmentManager fragmentManager;
 
-    private int pragmentNum;
+    private int fragmentNum;
 
     QuestionPageOneFragment questionPageOneFragment;
     QuestionPageTwoFragment questionPageTwoFragment;
@@ -36,7 +37,6 @@ public class RegisterPetActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_register_pet);
 
         questionPageOneFragment = new QuestionPageOneFragment();
@@ -44,9 +44,19 @@ public class RegisterPetActivity extends BaseActivity {
         questionPageThreeFragment = new QuestionPageThreeFragment();
 
         fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentManager.beginTransaction().replace(R.id.framelayout_page, questionPageOneFragment).commit();/*프래그먼트 매니저가 프래그먼트를 담당한다!*/
-        pragmentNum = 1;
+        fragmentTransaction.add(R.id.framelayout_page, questionPageOneFragment);
+        fragmentTransaction.add(R.id.framelayout_page, questionPageTwoFragment);
+        fragmentTransaction.add(R.id.framelayout_page, questionPageThreeFragment);
+
+        fragmentTransaction.show(questionPageOneFragment);
+        fragmentTransaction.hide(questionPageTwoFragment);
+        fragmentTransaction.hide(questionPageThreeFragment);
+
+        fragmentTransaction.commit();
+
+        fragmentNum = 1;
 
         button_next_page = (Button)findViewById(R.id.button_next_page);
         button_prev_page = (Button)findViewById(R.id.button_prev_page);
@@ -61,42 +71,36 @@ public class RegisterPetActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
 
-                if(pragmentNum == 1) {
-//                    fragmentManager.beginTransaction().replace(R.id.framelayout_page, questionPageTwoFragment).commit();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.in_right, R.anim.out_left, R.anim.in_right, R.anim.out_left)
-                            .addToBackStack(null)
-                            .replace(R.id.framelayout_page, questionPageTwoFragment)
-                            .commit();
+                if(fragmentNum == 1) {
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.setCustomAnimations(R.anim.in_right, R.anim.out_left, R.anim.in_right, R.anim.out_left);
+                    fragmentTransaction.hide(questionPageOneFragment).show(questionPageTwoFragment).hide(questionPageThreeFragment).commit();
 
                     viewPageOne.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
                     viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
 
                     textViewQuestionTitle.setText("추가 정보를\n기입해주세요");
 
-                    pragmentNum = 2;
+                    fragmentNum = 2;
 
                     button_prev_page.setEnabled(true);
                 }
-                else if(pragmentNum == 2) {
-//                    fragmentManager.beginTransaction().replace(R.id.framelayout_page, questionPageThreeFragment).commit();
-                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.in_right, R.anim.out_left, R.anim.in_right, R.anim.out_left)
-                            .addToBackStack(null)
-                            .replace(R.id.framelayout_page, questionPageThreeFragment)
-                            .commit();
+                else if(fragmentNum == 2) {
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.setCustomAnimations(R.anim.in_right, R.anim.out_left, R.anim.in_right, R.anim.out_left);
+                    fragmentTransaction.hide(questionPageOneFragment).hide(questionPageTwoFragment).show(questionPageThreeFragment).commit();
 
                     viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
                     viewPageThree.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
 
                     textViewQuestionTitle.setText("선호하는 방식을\n선택해주세요");
 
-                    pragmentNum = 3;
+                    fragmentNum = 3;
 
                     button_next_page.setEnabled(false);
                 }
                 else{
                     button_next_page.setEnabled(false);
-                    ;
                 }
 
             }
@@ -106,41 +110,36 @@ public class RegisterPetActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
 
-                if(pragmentNum == 2) {
-//                    fragmentManager.beginTransaction().replace(R.id.framelayout_page, questionPageOneFragment).commit();
-                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.in_left, R.anim.out_right, R.anim.in_left, R.anim.out_right)
-                            .addToBackStack(null)
-                            .replace(R.id.framelayout_page, questionPageOneFragment)
-                            .commit();
+                if(fragmentNum == 2) {
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.setCustomAnimations(R.anim.in_left, R.anim.out_right, R.anim.in_left, R.anim.out_right);
+                    fragmentTransaction.show(questionPageOneFragment).hide(questionPageTwoFragment).hide(questionPageThreeFragment).commit();
 
                     viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
                     viewPageOne.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
 
                     textViewQuestionTitle.setText("당신의 반려동물을\n소개해주세요");
 
-                    pragmentNum = 1;
+                    fragmentNum = 1;
 
                     button_prev_page.setEnabled(false);
                 }
-                else if(pragmentNum == 3) {
-//                    fragmentManager.beginTransaction().replace(R.id.framelayout_page, questionPageTwoFragment).commit();
-                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.in_left, R.anim.out_right, R.anim.in_left, R.anim.out_right)
-                            .addToBackStack(null)
-                            .replace(R.id.framelayout_page, questionPageTwoFragment)
-                            .commit();
+                else if(fragmentNum == 3) {
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.setCustomAnimations(R.anim.in_left, R.anim.out_right, R.anim.in_left, R.anim.out_right);
+                    fragmentTransaction.hide(questionPageOneFragment).show(questionPageTwoFragment).hide(questionPageThreeFragment).commit();
 
                     viewPageThree.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
                     viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
 
                     textViewQuestionTitle.setText("추가 정보를\n기입해주세요");
 
-                    pragmentNum = 2;
+                    fragmentNum = 2;
 
                     button_next_page.setEnabled(true);
                 }
                 else{
                     button_prev_page.setEnabled(false);
-                    ;
                 }
 
             }
