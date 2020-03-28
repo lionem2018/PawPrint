@@ -4,6 +4,16 @@
     android:layout_height="wrap_content"
     android:padding="32dp">
 
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추가 정보를\n기입해주세요"
+        android:textAlignment="center"
+        android:textColor="@color/pageNameColor"
+        android:fontFamily="@font/lottemartdreambold"
+        android:textSize="35dp"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="60dp"/>
@@ -150,5 +160,9 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="65dp"/>
 
 </LinearLayout>

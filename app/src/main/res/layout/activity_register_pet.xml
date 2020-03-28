@@ -24,24 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"/>
 
-        <TextView
-            android:id="@+id/text_view_quesiton_title"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="당신의 반려동물을 \n 소개해주세요"
-            android:textAlignment="center"
-            android:textColor="@color/pageNameColor"
-            android:fontFamily="@font/lottemartdreambold"
-            android:textSize="35dp"/>
+        <FrameLayout
+            android:id="@+id/framelayout_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/framelayout_page"
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <!--
     <LinearLayout
@@ -207,6 +195,7 @@
                 android:layout_height="3dp"
                 android:background="#D7D7D7"/>
 
+            <!--
             <View
                 android:layout_width="5dp"
                 android:layout_height="3dp" />
@@ -216,6 +205,7 @@
                 android:layout_width="45dp"
                 android:layout_height="3dp"
                 android:background="#D7D7D7"/>
+            -->
 
         </LinearLayout>
 
