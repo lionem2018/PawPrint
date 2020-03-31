@@ -41,17 +41,19 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/button_male"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="남자아이"
                 android:fontFamily="@font/nanumgothic"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
 
             <View
                 android:layout_width="14dp"
                 android:layout_height="match_parent"/>
 
             <Button
+                android:id="@+id/button_female"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:text="여자아이"
@@ -98,7 +100,6 @@
                 android:textColorHint="@color/editTextHintColor"
                 android:textColor="#000000"
                 android:fontFamily="@font/nanumgothic"
-                android:maxLength="8"
                 android:enabled="false"/>
 
             <Button
@@ -148,7 +149,6 @@
                 android:textColorHint="@color/editTextHintColor"
                 android:textColor="#000000"
                 android:fontFamily="@font/nanumgothic"
-                android:maxLength="8"
                 android:enabled="false"/>
 
             <Button
