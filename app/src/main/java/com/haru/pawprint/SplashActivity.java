@@ -35,8 +35,8 @@ public class SplashActivity extends BaseActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                // 저장소 쓰기 권한 확인(쓰기 권한이 있으면 읽기 권한 자동 부여)
+                if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     // 권한이 있으면 다음 Activity로 전환
                     startNextAcivity();
                 } else {
@@ -55,22 +55,8 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         // BEGIN_INCLUDE(onRequestPermissionsResult)
-        // 저장소 읽기에 대한 권한
-        if (requestCode == PERMISSION_READ_EXTERNAL_STORAGE) {
-            // Request for camera permission.
-            // 권한이 승인되었다면
-            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission has been granted.
-                // 다음 Activity로 전환
-                startNextAcivity();
-            } else {
-                // Permission request was denied.
-                // 권한이 거부되었다면 Toast 메시지 출력 후 종료
-                Toast.makeText(this,"아직 승인받지 않았습니다.",Toast.LENGTH_LONG).show();
-                finish();
-            }
         // 저장소 쓰기에 대한 권한
-        } else if (requestCode == PERMISSION_WRITE_EXTERNAL_STORAGE) {
+        if (requestCode == PERMISSION_WRITE_EXTERNAL_STORAGE) {
             // Request for camera permission.
             // 권한이 승인되었다면
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -93,22 +79,13 @@ public class SplashActivity extends BaseActivity {
         // Acivity 전환 효과
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
-
         // 스플래시 액티비티를 스텍에서 제거
         SplashActivity.this.finish();
     }
 
     public void requestExternalStoragePermission(){
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            // Provide an additional rationale to the user if the permission was not granted
-            // and the user would benefit from additional context for the use of the permission.
-            // 저장소 읽기 권한 요청
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_READ_EXTERNAL_STORAGE);
-
-        } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-            // Request the permission. The result will be received in onRequestPermissionResult().
-            // 저장소 쓰기 권한 요청
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_WRITE_EXTERNAL_STORAGE);
-        }
+        // Request the permission. The result will be received in onRequestPermissionResult().
+        // 저장소 쓰기 권한 요청
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_WRITE_EXTERNAL_STORAGE);
     }
 }
