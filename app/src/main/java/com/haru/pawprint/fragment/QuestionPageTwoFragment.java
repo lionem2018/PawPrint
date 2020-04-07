@@ -33,10 +33,6 @@ public class QuestionPageTwoFragment extends Fragment {
     private EditText editTextBirthday;
     private EditText editTextAdopt;
 
-    // 성별 선택 Button 변수
-    private Button buttonMale;
-    private Button buttonFemale;
-
     // 성별 정보 변수(남자는 false, 여자는 true)
     private boolean gender;
 
@@ -57,15 +53,6 @@ public class QuestionPageTwoFragment extends Fragment {
         // Button과 EditText 객체를 불러오기 위한 View 객체 가져오기
         view = inflater.inflate(R.layout.fragment_question_page_two, container, false);
 
-        // 성별 선택 Button 객체 가져오기
-        buttonMale = (Button) view.findViewById(R.id.button_male);
-        buttonFemale = (Button) view.findViewById(R.id.button_female);
-
-        // 성별 선택 Button Enable 기본 세팅(남자아이로 기본 선택)
-        // 향후 수정 가능성 있음
-        buttonMale.setEnabled(false);
-        gender = false;
-
         // DatePicker를 연결할 Button 객체 가져오기
         buttonCalBirthday = (Button) view.findViewById(R.id.button_cal_birthday);
         buttonCalAdopt = (Button) view.findViewById(R.id.button_cal_adopt);
@@ -78,32 +65,6 @@ public class QuestionPageTwoFragment extends Fragment {
         year_birthday = year_adopt = Calendar.getInstance().get(Calendar.YEAR);
         month_birthday = month_adopt = Calendar.getInstance().get(Calendar.MONTH);
         day_birthday = day_adopt = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-
-        // 남자아이 버튼 클릭 리스너 등록
-        buttonMale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // 버튼 상태 변경 및 성별 정보 변경(남자. false)
-                // 향후 수정 가능성 있음
-                buttonMale.setEnabled(false);
-                buttonFemale.setEnabled(true);
-                gender = false;
-            }
-        });
-
-        // 여자아이 버튼 클릭 리스너 등록
-        buttonFemale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // 버튼 상태 변경 및 성별 정보 변경(여자, true)
-                // 향후 수정 가능성 있음
-                buttonMale.setEnabled(true);
-                buttonFemale.setEnabled(false);
-                gender = true;
-            }
-        });
 
         // 생일 날짜 선택 버튼 클릭 리스너 등록
         buttonCalBirthday.setOnClickListener(new View.OnClickListener() {
