@@ -12,4 +12,7 @@
 
     <color name="buttonInvisibleStateColor">#D7D7D7</color>
     <color name="buttonVisibleStateColor">#464646</color>
+
+    <color name="buttonTextColor">#E5E5E5</color>
+    <color name="typeTextColor">#797979</color>
 </resources>

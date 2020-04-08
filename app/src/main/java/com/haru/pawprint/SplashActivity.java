@@ -22,7 +22,6 @@ import androidx.core.app.ActivityCompat;
 public class SplashActivity extends BaseActivity {
 
     private final int SPLASH_DISPLAY_TIME = 1000;
-    private static final int PERMISSION_READ_EXTERNAL_STORAGE = 1;
     private static final int PERMISSION_WRITE_EXTERNAL_STORAGE = 2;
 
     @Override
@@ -75,7 +74,9 @@ public class SplashActivity extends BaseActivity {
 
     public void startNextAcivity(){
         // 다음 Acivity로 전환
-        startActivity(new Intent(getApplication(), RegisterPetActivity.class));
+//        startActivity(new Intent(getApplication(), RegisterPetActivity.class));\
+        startActivity(new Intent(getApplication(), SelectPetActivity.class));
+
         // Acivity 전환 효과
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

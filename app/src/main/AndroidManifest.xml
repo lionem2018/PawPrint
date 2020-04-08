@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterPetActivity"/>
+        <activity android:name=".SelectPetActivity"/>
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) -->

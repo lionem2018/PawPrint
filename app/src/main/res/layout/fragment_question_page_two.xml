@@ -78,7 +78,9 @@
                 android:layout_height="36dp"
                 android:button="@null"
                 android:text="남자아이"
-                android:textColor="#E5E5E5"
+                android:textColor="@color/buttonTextColor"
+                android:fontFamily="@font/nanumgothic"
+                android:textSize="16dp"
                 android:gravity="center"
                 android:background="@drawable/radio_button"/>
 
@@ -91,7 +93,9 @@
                 android:layout_height="36dp"
                 android:button="@null"
                 android:text="여자아이"
-                android:textColor="#E5E5E5"
+                android:textColor="@color/buttonTextColor"
+                android:fontFamily="@font/nanumgothic"
+                android:textSize="16dp"
                 android:gravity="center"
                 android:background="@drawable/radio_button"/>
 
