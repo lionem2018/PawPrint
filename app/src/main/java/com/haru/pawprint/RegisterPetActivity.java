@@ -135,8 +135,21 @@ public class RegisterPetActivity extends BaseActivity {
                 else{
                     // 이전, 다음 버튼 상태 변경
 //                    button_next_page.setEnabled(false);
-                    button_next_page.setText("완료");
-                    button_prev_page.setEnabled(true);
+                    if(button_next_page.getText() == "완료") {
+                        // 반려동물 선택 화면으로 이동
+                        startActivity(new Intent(getApplication(), SelectPetActivity.class));
+
+                        // Acivity 전환 효과
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                        // 반려동물 등록 액티비티를 스텍에서 제거
+                        RegisterPetActivity.this.finish();
+                    }
+                    else {
+                        button_next_page.setText("완료");
+                        button_prev_page.setEnabled(true);
+//                    button_next_page.setEnabled(false);
+                    }
                 }
 
             }

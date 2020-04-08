@@ -1,11 +1,9 @@
 package com.haru.pawprint;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -27,14 +25,18 @@ public class SelectPetActivity extends BaseActivity{
         // 펫 리스트 역할의 리니어 레이아웃 가져오기
         linearLayout = (LinearLayout) findViewById(R.id.layout_pet_list);
 
+        // 펫 아이템 동적 추가
+        // 개발 시 테스트를 위해 추가, 추후 없앨 것
+        inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
+
         // 펫 추가 버튼 가져오기
         buttonAddPet = (Button) findViewById(R.id.button_add_pet);
         // 펫 추가 버튼 클릭 리스너 등록
         buttonAddPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                // 펫 아이템 동적 추가
 //                inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
-//                checkPetItemNumber();
 
                 // 반려동물 등록 화면으로 이동
                 startActivity(new Intent(getApplication(), RegisterPetActivity.class));
@@ -47,6 +49,16 @@ public class SelectPetActivity extends BaseActivity{
             }
         });
 
+        showPetItem();
+    }
+
+    private void showPetItem(){
+        //////////////////////////////////////////////////////////////////////////
+        // DB에서 펫 정보 가져와 리스트로 찍어내는 코드 필요
+        //
+        // 펫 아이템 동적 추가
+        // inflater.inflate(R.layout.layout_pe`t_item, linearLayout, true);
+        //////////////////////////////////////////////////////////////////////////
         checkPetItemNumber();
     }
 
