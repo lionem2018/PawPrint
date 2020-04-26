@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 public class SelectPetActivity extends BaseActivity{
 
-    private Button buttonAddPet;
+    private LinearLayout linearLayoutButtonAddPet;
     private LayoutInflater inflater;
     private LinearLayout linearLayout;
 
@@ -28,11 +28,12 @@ public class SelectPetActivity extends BaseActivity{
         // 펫 아이템 동적 추가
         // 개발 시 테스트를 위해 추가, 추후 없앨 것
         inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
+        inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
 
         // 펫 추가 버튼 가져오기
-        buttonAddPet = (Button) findViewById(R.id.button_add_pet);
+        linearLayoutButtonAddPet = (LinearLayout) findViewById(R.id.layouyt_add_pet);
         // 펫 추가 버튼 클릭 리스너 등록
-        buttonAddPet.setOnClickListener(new View.OnClickListener() {
+        linearLayoutButtonAddPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                // 펫 아이템 동적 추가
@@ -66,9 +67,9 @@ public class SelectPetActivity extends BaseActivity{
         // 반려동물 최대 4마리 관리 가능
         if(linearLayout.getChildCount() >= 4)
             // 4마리가 되면 펫 추가 버튼 숨기기
-            buttonAddPet.setVisibility(View.GONE);
+            linearLayoutButtonAddPet.setVisibility(View.GONE);
         else
             // 4마리가 아니라면 펫 추가 버튼 보이기
-            buttonAddPet.setVisibility(View.VISIBLE);
+            linearLayoutButtonAddPet.setVisibility(View.VISIBLE);
     }
 }

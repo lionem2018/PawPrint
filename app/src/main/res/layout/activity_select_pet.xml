@@ -49,14 +49,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
-        <Button
-            android:id="@+id/button_add_pet"
+        <!-- add pet custom button -->
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:background="@drawable/add_pet_button"/>
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/layouyt_add_pet"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:background="@drawable/layout_round_ebebeb"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+"
+                    android:textSize="34dp"
+                    android:textColor="#D7D7D7"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="반려동물 추가하기"
+                    android:textSize="12dp"
+                    android:textColor="#CBCBCB"
+                    android:fontFamily="@font/nanumgothic"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
