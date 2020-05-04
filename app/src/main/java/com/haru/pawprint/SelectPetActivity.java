@@ -1,34 +1,50 @@
 package com.haru.pawprint;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import com.haru.pawprint.database.AppDatabase;
+import com.haru.pawprint.database.dao.PetDao;
+import com.haru.pawprint.database.entities.Pet;
+import com.haru.pawprint.util.PetArrayAdapter;
+
+import java.util.List;
 
 import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
 
 public class SelectPetActivity extends BaseActivity{
 
-    private LinearLayout linearLayoutButtonAddPet;
-    private LayoutInflater inflater;
-    private LinearLayout linearLayout;
+    // 커스텀 반려동물 추가 버튼
+    private static LinearLayout linearLayoutButtonAddPet;
+    // 반려동물 리스트 뷰
+    private ListView listViewPet;
+    // Room DB
+    private AppDatabase db;
+    // 반려동물 리스트 뷰 어댑터
+    private static PetArrayAdapter petArrayAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pet);
 
-        // 펫 리스트 아이템 동적 추가를 위한 인플래터 가져오기
-        inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        // 펫 리스트 역할의 리니어 레이아웃 가져오기
-        linearLayout = (LinearLayout) findViewById(R.id.layout_pet_list);
+        // 반려동물 리스트뷰 가져오기
+        listViewPet = (ListView) findViewById(R.id.listView_pet_list);
+        // 반려동물 리스트뷰 어댑터 생성
+        petArrayAdapter = new PetArrayAdapter();
+        // 반려동물 리스트뷰 어댑터 지정
+        listViewPet.setAdapter(petArrayAdapter);
 
-        // 펫 아이템 동적 추가
-        // 개발 시 테스트를 위해 추가, 추후 없앨 것
-        inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
-        inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
+        // Room DB 인스턴스 가져오기
+        db = AppDatabase.getAppDataBase(this);
 
         // 펫 추가 버튼 가져오기
         linearLayoutButtonAddPet = (LinearLayout) findViewById(R.id.layouyt_add_pet);
@@ -36,8 +52,6 @@ public class SelectPetActivity extends BaseActivity{
         linearLayoutButtonAddPet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                // 펫 아이템 동적 추가
-//                inflater.inflate(R.layout.layout_pet_item, linearLayout, true);
 
                 // 반려동물 등록 화면으로 이동
                 startActivity(new Intent(getApplication(), RegisterPetActivity.class));
@@ -50,26 +64,53 @@ public class SelectPetActivity extends BaseActivity{
             }
         });
 
+        // 반려동물 리스트뷰에 리스트 아이템 추가
         showPetItem();
     }
 
+    // Room DB에서 반려동물 정보 가져와 리스트뷰에 추가하는 함수
     private void showPetItem(){
-        //////////////////////////////////////////////////////////////////////////
-        // DB에서 펫 정보 가져와 리스트로 찍어내는 코드 필요
-        //
-        // 펫 아이템 동적 추가
-        // inflater.inflate(R.layout.layout_pe`t_item, linearLayout, true);
-        //////////////////////////////////////////////////////////////////////////
-        checkPetItemNumber();
+        // Room DB 특성상 서브 스레드에서 진행
+        new GetAllAsyncTask(db.petDao()).execute();
     }
 
-    private void checkPetItemNumber(){
-        // 반려동물 최대 4마리 관리 가능
-        if(linearLayout.getChildCount() >= 4)
+    // 반려동물 4마리 이상 되면 추가 버튼 숨기는 함수
+    private static void checkPetItemNumber(){
+        // 반려동물 최대 4마리 관리
+        if(petArrayAdapter.getCount() >= 4)
             // 4마리가 되면 펫 추가 버튼 숨기기
             linearLayoutButtonAddPet.setVisibility(View.GONE);
         else
             // 4마리가 아니라면 펫 추가 버튼 보이기
             linearLayoutButtonAddPet.setVisibility(View.VISIBLE);
+    }
+
+    // Room DB에서 모든 반려동물 정보 가져오는 비동기 태스크 클래스
+    private static class GetAllAsyncTask extends AsyncTask<Void, Void, Void> {
+        // 반려동물 DAO
+        private PetDao petDao;
+
+        public GetAllAsyncTask(PetDao petDao)
+        {
+            this.petDao = petDao;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            // DB에서 반려동물 정보 모두 가져오기
+            List<Pet> pets =  petDao.getAll();
+
+            // 모든 반려동물 정보 어댑터에 추가
+            for(Pet pet:pets)
+            {
+                petArrayAdapter.addItem(pet);
+            }
+
+            // 반려동물 수가 4마리 이상인지 확인
+            checkPetItemNumber();
+
+            return null;
+        }
     }
 }

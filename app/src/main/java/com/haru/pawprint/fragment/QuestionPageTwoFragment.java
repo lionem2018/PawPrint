@@ -3,6 +3,7 @@ package com.haru.pawprint.fragment;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
@@ -25,6 +28,14 @@ public class QuestionPageTwoFragment extends Fragment {
     // Button과 EditText 객체를 불러오기 위한 View 변수
     private View view;
 
+    private RadioGroup radioGroupGender;
+
+    private RadioButton radioButtonMale;
+    private RadioButton radioButtonFemale;
+
+    // 반려동물 성별 요소 변수
+    private int gender;
+
     // DatePicker를 연결할 Button 변수
     private Button buttonCalBirthday;
     private Button buttonCalAdopt;
@@ -32,9 +43,6 @@ public class QuestionPageTwoFragment extends Fragment {
     // DatePicker의 결과를 보여줄 EditText 변수
     private EditText editTextBirthday;
     private EditText editTextAdopt;
-
-    // 성별 정보 변수(남자는 false, 여자는 true)
-    private boolean gender;
 
     // 생일 관련 날짜 요소 변수
     private int year_birthday;
@@ -52,6 +60,20 @@ public class QuestionPageTwoFragment extends Fragment {
 
         // Button과 EditText 객체를 불러오기 위한 View 객체 가져오기
         view = inflater.inflate(R.layout.fragment_question_page_two, container, false);
+
+        // 성별 라디오 그룹 객체 가져오기
+        radioGroupGender = (RadioGroup) view.findViewById(R.id.radio_group_gender);
+        radioButtonMale = (RadioButton) view.findViewById(R.id.radio_button_male);
+        radioButtonFemale = (RadioButton) view.findViewById(R.id.radio_button_female);
+        radioGroupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(radioButtonMale.isChecked())
+                    gender = 1;
+                else
+                    gender = 2;
+            }
+        });
 
         // DatePicker를 연결할 Button 객체 가져오기
         buttonCalBirthday = (Button) view.findViewById(R.id.button_cal_birthday);
@@ -125,5 +147,10 @@ public class QuestionPageTwoFragment extends Fragment {
             return true;
         else
             return false;
+    }
+
+    public int getGender()
+    {
+        return gender;
     }
 }

@@ -9,20 +9,26 @@ package com.haru.pawprint;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.os.AsyncTask;
 
-import com.haru.pawprint.BaseActivity;
-import com.haru.pawprint.R;
+import com.haru.pawprint.database.AppDatabase;
+import com.haru.pawprint.database.dao.PetDao;
+import com.haru.pawprint.database.entities.Pet;
 import com.haru.pawprint.fragment.QuestionPageOneFragment;
-import com.haru.pawprint.fragment.QuestionPageThreeFragment;
 import com.haru.pawprint.fragment.QuestionPageTwoFragment;
+
+import java.sql.Timestamp;
 
 public class RegisterPetActivity extends BaseActivity {
 
@@ -34,26 +40,27 @@ public class RegisterPetActivity extends BaseActivity {
     // 프래그먼트 변수
     private QuestionPageOneFragment questionPageOneFragment;
     private QuestionPageTwoFragment questionPageTwoFragment;
-//    private QuestionPageThreeFragment questionPageThreeFragment;
 
     // 현재 프래그먼트 표시 변수
     private View viewPageOne;
     private View viewPageTwo;
-//    private View viewPageThree;
 
     // 이전, 다음 Button 변수
     private Button button_next_page;
     private Button button_prev_page;
+
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_pet);
 
+        db = AppDatabase.getAppDataBase(this);
+
         // 프래그먼트 생성
         questionPageOneFragment = new QuestionPageOneFragment();
         questionPageTwoFragment = new QuestionPageTwoFragment();
-//        questionPageThreeFragment = new QuestionPageThreeFragment();
 
         // 프래그먼트 관리 객체, 프래그먼트 트랜잭션 생성
         fragmentManager = getSupportFragmentManager();
@@ -62,12 +69,10 @@ public class RegisterPetActivity extends BaseActivity {
         // 프래그먼트 등록
         fragmentTransaction.add(R.id.framelayout_page, questionPageOneFragment);
         fragmentTransaction.add(R.id.framelayout_page, questionPageTwoFragment);
-//        fragmentTransaction.add(R.id.framelayout_page, questionPageThreeFragment);
 
         // 처음으로 첫번째 프래그먼트 보이기
         fragmentTransaction.show(questionPageOneFragment);
         fragmentTransaction.hide(questionPageTwoFragment);
-//        fragmentTransaction.hide(questionPageThreeFragment);
 
         // 프래그먼트 상태 커밋
         fragmentTransaction.commit();
@@ -82,7 +87,6 @@ public class RegisterPetActivity extends BaseActivity {
         // 뷰 객체 불러오기
         viewPageOne = (View)findViewById(R.id.view_page_one);
         viewPageTwo = (View)findViewById(R.id.view_page_two);
-//        viewPageThree = (View)findViewById(R.id.view_page_three);
 
         // 다음 버튼 클릭리스너 등록
         button_next_page.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +102,6 @@ public class RegisterPetActivity extends BaseActivity {
                     // 첫번째 프래그먼트 숨기고 두번째 프래그먼트 보이기
                     fragmentTransaction.hide(questionPageOneFragment)
                             .show(questionPageTwoFragment)
-//                            .hide(questionPageThreeFragment)
                             .commit();
 
                     // 현재 프래그먼트 표시 변경
@@ -110,32 +113,25 @@ public class RegisterPetActivity extends BaseActivity {
 
                     button_next_page.setText("완료");
                     button_prev_page.setEnabled(true);
-//                    button_next_page.setEnabled(false);
-
-//                    // 프래그먼트의 값이 다 채워졌다면 이전, 다음 버튼 상태 변경(보류)
-//                    if (questionPageOneFragment.isFilledAllView() && questionPageTwoFragment.isFilledAllView())
-//                        button_next_page.setEnabled(true);
-//                    else
-//                        button_next_page.setEnabled(false);
-
                 }
-                // 현재 두 번째 프래그먼트 인 경우 (보류)
-//                else if(fragmentNum == 2) {
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.setCustomAnimations(R.anim.in_right, R.anim.out_left, R.anim.in_right, R.anim.out_left);
-//                    fragmentTransaction.hide(questionPageOneFragment).hide(questionPageTwoFragment).show(questionPageThreeFragment).commit();
-//
-//                    viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
-//                    viewPageThree.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
-//
-//                    fragmentNum = 3;
-//
-//                    button_next_page.setEnabled(false);
-//                }
-                else{
-                    // 이전, 다음 버튼 상태 변경
-//                    button_next_page.setEnabled(false);
+                else {
                     if(button_next_page.getText() == "완료") {
+
+                        // 사용자 입력 정보 가져오기
+                        String petName = ((EditText)questionPageOneFragment.getView().findViewById(R.id.edit_text_name)).getText().toString();
+                        String petType = ((EditText)questionPageOneFragment.getView().findViewById(R.id.edit_text_type)).getText().toString();
+                        Uri petImageUri = questionPageOneFragment.getPetImageUri();
+                        int petGender = questionPageTwoFragment.getGender();
+                        String petBirthday = ((EditText)questionPageTwoFragment.getView().findViewById(R.id.edit_text_birthday)).getText().toString();
+                        String petAdoptday = ((EditText)questionPageTwoFragment.getView().findViewById(R.id.edit_text_adopt)).getText().toString();
+                        String timestamp = new Timestamp(System.currentTimeMillis()).toString();
+
+                        // 입력 정보를 가지고 반려동물 객체 생성
+                        Pet newPet = new Pet(petName, petType, petImageUri.toString(), petGender, petBirthday, petAdoptday, timestamp);
+
+                        // 새 반려동물 정보를 DB에 저장
+                        new InsertAsyncTask(db.petDao()).execute(newPet);
+
                         // 반려동물 선택 화면으로 이동
                         startActivity(new Intent(getApplication(), SelectPetActivity.class));
 
@@ -148,7 +144,6 @@ public class RegisterPetActivity extends BaseActivity {
                     else {
                         button_next_page.setText("완료");
                         button_prev_page.setEnabled(true);
-//                    button_next_page.setEnabled(false);
                     }
                 }
 
@@ -169,7 +164,6 @@ public class RegisterPetActivity extends BaseActivity {
                     // 첫번째 프래그먼트 보이고, 두번째 프래그먼트 숨기기
                     fragmentTransaction.show(questionPageOneFragment)
                             .hide(questionPageTwoFragment)
-//                            .hide(questionPageThreeFragment)
                             .commit();
 
                     // 현재 프래그먼트 표시 변경
@@ -184,19 +178,6 @@ public class RegisterPetActivity extends BaseActivity {
                     button_next_page.setText("다음");
                     button_next_page.setEnabled(true);
                 }
-                // 현재 세 번째 프래그먼트 인 경우 (보류)
-//                else if(fragmentNum == 3) {
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.setCustomAnimations(R.anim.in_left, R.anim.out_right, R.anim.in_left, R.anim.out_right);
-//                    fragmentTransaction.hide(questionPageOneFragment).show(questionPageTwoFragment).hide(questionPageThreeFragment).commit();
-//
-//                    viewPageThree.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonInvisibleStateColor));
-//                    viewPageTwo.setBackgroundColor(getApplicationContext().getResources().getColor(R.color.buttonVisibleStateColor));
-//
-//                    fragmentNum = 2;
-//
-//                    button_next_page.setEnabled(true);
-//                }
                 else{
                     // 이전, 다음 버튼 상태 변경
                     button_prev_page.setEnabled(false);
@@ -214,5 +195,23 @@ public class RegisterPetActivity extends BaseActivity {
         int request = requestCode & 0xffff;
 
         questionPageOneFragment.onActivityResult(request, resultCode, data);
+    }
+
+    // 반려동물 정보 DB에 추가하는 비동기 태스크 클래스
+    public static class InsertAsyncTask extends AsyncTask<Pet, Void, Void>
+    {
+        // 반려동물 DAO
+        private PetDao petDao;
+
+        public InsertAsyncTask(PetDao petDao){
+            this.petDao = petDao;
+        }
+
+        // 한 개의 반려동물 정보를 DB에 추가
+        @Override
+        protected Void doInBackground(Pet... pets) {
+            petDao.insert(pets[0]);
+            return null;
+        }
     }
 }

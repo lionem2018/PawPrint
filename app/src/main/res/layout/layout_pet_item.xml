@@ -23,6 +23,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textview_item_pet_name"
                 android:layout_gravity="center_vertical|end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
                 android:textSize="28dp"/>
 
             <TextView
+                android:id="@+id/textview_item_pet_type"
                 android:layout_gravity="center_vertical|end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view_item_pet"
         android:layout_marginLeft="10dp"
         android:layout_gravity="center_vertical"
         xmlns:app="http://schemas.android.com/apk/res-auto"

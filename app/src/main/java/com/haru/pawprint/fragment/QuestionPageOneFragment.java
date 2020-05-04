@@ -30,6 +30,8 @@ public class QuestionPageOneFragment extends Fragment {
     // CircleImageView 변수(원형 이미지뷰)
     private CircleImageView circleImageView;
 
+    private Uri resultUri;
+
     private final int GET_GALLERY_IMAGE = 200;
 
     @Nullable
@@ -81,7 +83,7 @@ public class QuestionPageOneFragment extends Fragment {
             // 이미지가 성공적으로 크롭되었다면
             if(resultCode == AppCompatActivity.RESULT_OK) {
                 // 크롭된 이미지를 CircleImageView에 적용
-                Uri resultUri = activityResult.getUri();
+                resultUri = activityResult.getUri();
                 circleImageView.setImageURI(resultUri);
             }
         }
@@ -97,5 +99,10 @@ public class QuestionPageOneFragment extends Fragment {
             return true;
         else
             return false;
+    }
+
+    public Uri getPetImageUri()
+    {
+        return resultUri;
     }
 }
