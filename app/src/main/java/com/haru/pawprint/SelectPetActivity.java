@@ -39,7 +39,19 @@ public class SelectPetActivity extends BaseActivity{
         // 반려동물 리스트뷰 가져오기
         listViewPet = (ListView) findViewById(R.id.listView_pet_list);
         // 반려동물 리스트뷰 어댑터 생성
-        petArrayAdapter = new PetArrayAdapter();
+        petArrayAdapter = new PetArrayAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 메인 화면으로 이동
+                startActivity(new Intent(getApplication(), MainActivity.class));
+
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                // 반려동물 선택 액티비티를 스텍에서 제거
+                SelectPetActivity.this.finish();
+            }
+        });
         // 반려동물 리스트뷰 어댑터 지정
         listViewPet.setAdapter(petArrayAdapter);
 
@@ -111,6 +123,18 @@ public class SelectPetActivity extends BaseActivity{
             checkPetItemNumber();
 
             return null;
+        }
+    }
+
+    class OnItemClick{
+        public void changeToMainAcitivity(){
+            startActivity(new Intent(getApplication(), RegisterPetActivity.class));
+
+            // Acivity 전환 효과
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+            // 반려동물 선택 액티비티를 스텍에서 제거
+            SelectPetActivity.this.finish();
         }
     }
 }

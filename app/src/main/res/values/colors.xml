@@ -15,4 +15,5 @@
 
     <color name="buttonTextColor">#E5E5E5</color>
     <color name="typeTextColor">#797979</color>
+    <color name="mainTitleColor">#686868</color>
 </resources>

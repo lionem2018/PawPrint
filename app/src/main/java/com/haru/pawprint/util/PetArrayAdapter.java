@@ -1,6 +1,7 @@
 package com.haru.pawprint.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
+import com.haru.pawprint.RegisterPetActivity;
+import com.haru.pawprint.SelectPetActivity;
 import com.haru.pawprint.database.entities.Pet;
 
 import java.util.ArrayList;
@@ -23,7 +26,11 @@ public class PetArrayAdapter extends BaseAdapter {
     // 버튼 리스트로 보여줄 반려동물 리스트
     private ArrayList<Pet> items = new ArrayList<Pet>();
 
-    public PetArrayAdapter(){ }
+    private View.OnClickListener clickListener;
+
+    public PetArrayAdapter(View.OnClickListener clickListener){
+        this.clickListener = clickListener;
+    }
 
     // 리스트 아이템 개수
     @Override
@@ -51,6 +58,8 @@ public class PetArrayAdapter extends BaseAdapter {
         circleImageView.setImageURI(Uri.parse(petItem.getPetProfileUri()));
         textViewPetName.setText(petItem.getPetName());
         textViewPetType.setText(petItem.getPetType());
+
+        view.setOnClickListener(clickListener);
 
         return view;
     }
