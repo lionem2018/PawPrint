@@ -55,23 +55,27 @@ public class MainActivity extends FragmentActivity {
 //        mPager.setPageMargin(24);
 //        mPager.setPageTransformer(new MarginPageTransformer(((int)((getResources().getDisplayMetrics().xdpi-244)))));
 
-        float pageMargin= getResources().getDimensionPixelOffset(R.dimen.pageMargin);
+        float pageMarginPx = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
+        float pagerWidth = getResources().getDimensionPixelOffset(R.dimen.pagerWidth);
+        float screenWidth = getResources().getDisplayMetrics().widthPixels;
+        float offsetPx = screenWidth - pageMarginPx - pagerWidth;
+
+        float pageMargin = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
         float pageOffset = getResources().getDimensionPixelOffset(R.dimen.offset);
 
-        mPager.setPageTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float myOffset = position * -(2 * pageOffset + pageMargin);
-                if (mPager.getOrientation() == ViewPager2.ORIENTATION_HORIZONTAL) {
-                    if (ViewCompat.getLayoutDirection(mPager) == ViewCompat.LAYOUT_DIRECTION_RTL) {
-                        page.setTranslationX(-myOffset);
-                    } else {
-                        page.setTranslationX(myOffset);
-                    }
+        mPager.setPageTransformer((page, position) -> {
+            float myOffset = position * -(2 * pageOffset + pageMargin);
+            if (mPager.getOrientation() == ViewPager2.ORIENTATION_HORIZONTAL) {
+                if (ViewCompat.getLayoutDirection(mPager) == ViewCompat.LAYOUT_DIRECTION_RTL) {
+                    page.setTranslationX(-myOffset);
                 } else {
-                    page.setTranslationY(myOffset);
+                    page.setTranslationX(myOffset);
                 }
+            } else {
+                page.setTranslationY(myOffset);
             }
+//
+//                page.setTranslationX(position * -offsetPx);
         });
     }
 
