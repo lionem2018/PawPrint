@@ -32,6 +32,8 @@ public class ScreenSlidePagerAdapter extends RecyclerView.Adapter<ScreenSlidePag
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     }
 
+
+
     @Override
     public int getItemCount() {
         return 15;
