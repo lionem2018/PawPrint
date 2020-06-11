@@ -1,8 +1,10 @@
 package com.haru.pawprint;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.haru.pawprint.fragment.CardViewFragment;
 import com.haru.pawprint.util.ScreenSlidePagerAdapter;
@@ -41,6 +43,18 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 설정 화면 버튼
+        Button btnSetting = findViewById(R.id.button_setting);
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(), SettingActivity.class));
+
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager2) findViewById(R.id.viewpager);
