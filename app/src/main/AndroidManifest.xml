@@ -13,7 +13,14 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingOpenSourceActivity"></activity>
+        <activity android:name=".SettingBugReportActivity" />
+        <activity android:name=".SettingRemoveAllActivity" />
+        <activity android:name=".SettingBackupActivity" />
+        <activity android:name=".SettingLockActivity" />
+        <activity android:name=".SettingAlarmActivity" />
+        <activity android:name=".SettingLanguageActiviity" />
+        <activity android:name=".SettingActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

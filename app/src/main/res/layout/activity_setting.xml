@@ -79,6 +79,7 @@
                     <!-- 언어 설정 -->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_lang"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -95,7 +96,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_lang"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -136,6 +136,7 @@
                     <!-- 알람 설정 -->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_alarm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -152,7 +153,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_alarm"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -193,6 +193,7 @@
                     <!-- 잠금 설정 -->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_lock"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -209,7 +210,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_lock"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -270,6 +270,7 @@
                     <!-- 백업 및 복원-->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_backup"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -286,7 +287,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_backup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -313,6 +313,7 @@
                     <!-- 기록 삭제-->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_removeall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -329,7 +330,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_removeall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -375,6 +375,7 @@
                     <!-- Pro 업그레이드/후원-->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_pay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -391,7 +392,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_pay"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -523,6 +523,7 @@
                     <!-- 버그 리포트-->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_bug_report"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -539,7 +540,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_bug_report"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -628,6 +628,7 @@
                     <!-- 오픈 소스-->
 
                     <RelativeLayout
+                        android:id="@+id/layout_config_open_source"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -644,7 +645,6 @@
                             android:fontFamily="@font/nanumgothic"/>
 
                         <LinearLayout
-                            android:id="@+id/layout_config_open_source"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"

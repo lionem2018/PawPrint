@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:id="@+id/textview_back_from_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="알림"
+            android:textSize="35dp"
+            android:fontFamily="@font/nanumgothic"
+            android:textColor="#686868"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 시스템 설정 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="알림 설정"
+                    android:textColor="#464646"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="6dp"
+                    android:paddingBottom="6dp"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+                <!-- 언어 설정 -->
+
+                <RelativeLayout
+                    android:id="@+id/layout_lang_kr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="알림 형태"
+                        android:textColor="#686868"
+                        android:textSize="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="9dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/btn_subtract"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D6D6D6"/>
+
+                <!-- 알람 설정 -->
+
+                <RelativeLayout
+                    android:id="@+id/layout_lang_en"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="시간"
+                        android:textColor="#686868"
+                        android:textSize="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PM 08:00"
+                            android:textColor="#686868"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:fontFamily="@font/nanumgothic"/>
+
+                        <ImageView
+                            android:layout_width="9dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/btn_subtract"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

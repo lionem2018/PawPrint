@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:id="@+id/textview_back_from_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="백업 및 복원"
+            android:textSize="35dp"
+            android:fontFamily="@font/nanumgothic"
+            android:textColor="#686868"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 시스템 설정 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="백업"
+                    android:textColor="#464646"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="6dp"
+                    android:paddingBottom="6dp"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:text="생성된 파일은 앱 내 저장되기에, 앱 삭제시 이 파일도 같이 삭제됩니다. 파일 생성 후에는 안전한 저장소로 파일을 보내두세요.\n저희는 클라우드 스토리지 서비스를 통해 저장하기를 권장합니다."
+                    android:textColor="#686868"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/nanumgothic"/>
+                
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="49dp"
+                    android:text="백업 파일 생성하기"
+                    android:textSize="16dp"
+                    android:textColor="#E5E5E5"
+                    android:fontFamily="@font/nanumgothic"
+                    android:textStyle="bold"/>
+
+                <!-- 리스트 아이템 동적 추가를 위해 변경 리스트뷰로 변경 예정 -->
+                <RelativeLayout
+                    android:id="@+id/layout_lang_kr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="001.zip"
+                        android:textColor="#686868"
+                        android:textSize="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:layout_width="9dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/btn_subtract"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#D6D6D6"/>
+
+                <!-- 알람 설정 -->
+
+                <RelativeLayout
+                    android:id="@+id/layout_lang_en"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="002.zip"
+                        android:textColor="#686868"
+                        android:textSize="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true">
+
+
+                        <ImageView
+                            android:layout_width="9dp"
+                            android:layout_height="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/btn_subtract"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="복원"
+                android:textColor="#464646"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingLeft="6dp"
+                android:paddingBottom="6dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#363636"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="백업 파일은 JSON 포맷만 지원합니다."
+                android:textColor="#686868"
+                android:textSize="10dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="49dp"
+                android:text="백업 파일 복원하기"
+                android:textSize="16dp"
+                android:textColor="#E5E5E5"
+                android:fontFamily="@font/nanumgothic"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
