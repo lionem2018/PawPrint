@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomsheet_record_picture"
+    android:layout_width="match_parent"
+    android:layout_height="212dp"
+    android:background="@drawable/layout_round_ffffff"
+    android:orientation="vertical"
+    app:behavior_peekHeight="117dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#686868"
+        android:fontFamily="@font/nanumgothic"
+        android:layout_gravity="center"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="30 DEC"
+        android:textColor="#686868"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:fontFamily="@font/nanumgothic"/>
+    
+    <View
+        android:layout_width="90dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="17dp"
+        android:background="#686868"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hello\nhello"
+        android:textSize="14dp"
+        android:textColor="#000000"
+        android:fontFamily="@font/nanumgothic"/>
+
+    </LinearLayout>
+
+</LinearLayout>

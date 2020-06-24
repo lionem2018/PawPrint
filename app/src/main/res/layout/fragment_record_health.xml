@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/nanumgothic"
+                android:text="오늘의 건강"
+                android:textColor="#686868"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+
+            <!-- condition -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumgothic"
+                    android:text="오늘의 컨디션"
+                    android:textColor="#686868"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="11dp"
+                    android:background="#686868" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginRight="18dp"
+                        android:background="@drawable/radio_button_condition_happy"
+                        android:button="@null" />
+
+                    <RadioButton
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:background="@drawable/radio_button_condition_soso"
+                        android:button="@null" />
+
+                    <RadioButton
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:background="@drawable/radio_button_condition_sad"
+                        android:button="@null" />
+
+                    <RadioButton
+                        android:layout_width="43dp"
+                        android:layout_height="43dp"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/radio_button_condition_sick"
+                        android:button="@null" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!-- check health -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="30dp">
+
+                <LinearLayout
+                    android:layout_width="93dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="몸무게"
+                        android:textColor="#686868"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/nanumgothic"
+                            android:gravity="right"
+                            android:hint="000"
+                            android:textAlignment="gravity"
+                            android:textColor="#3d3d3d"
+                            android:textColorHint="#c9c9c9"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:autofillHints="false" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/nanumgothic"
+                            android:text="KG"
+                            android:textColor="#3d3d3d"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#686868" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:button="@null"
+                            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/nanumgothic"
+                            android:text="양치"
+                            android:textColor="#686868"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/nanumgothic"
+                            android:text="목욕"
+                            android:textColor="#686868"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:button="@null"
+                            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/nanumgothic"
+                            android:text="발톱"
+                            android:textColor="#686868"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:button="@null"
+                            android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                            android:drawablePadding="15dp"
+                            android:fontFamily="@font/nanumgothic"
+                            android:text="빗질"
+                            android:textColor="#686868"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 산책/놀이 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="산책 / 놀이"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:shadowColor="@null"
+                        android:text="+"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#686868" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- 식사/영양제 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="식사 / 영양제"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:shadowColor="@null"
+                        android:text="+"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#686868" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- 약/병원 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="약 / 병원"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:shadowColor="@null"
+                        android:text="+"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#686868" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- 기타 기록 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="기타 기록"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:shadowColor="@null"
+                        android:text="+"
+                        android:textColor="#686868"
+                        android:textSize="20dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#686868" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

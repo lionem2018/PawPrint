@@ -52,7 +52,7 @@
                 android:fontFamily="@font/nanumgothic"
                 android:textSize="16dp"
                 android:gravity="center"
-                android:background="@drawable/radio_button"/>
+                android:background="@drawable/radio_button_normal"/>
 
             <View
                 android:layout_width="14dp"
@@ -68,7 +68,7 @@
                 android:fontFamily="@font/nanumgothic"
                 android:textSize="16dp"
                 android:gravity="center"
-                android:background="@drawable/radio_button"/>
+                android:background="@drawable/radio_button_normal"/>
 
         </RadioGroup>
 

@@ -1,6 +1,8 @@
 package com.haru.pawprint.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
+import com.haru.pawprint.RecordActivity;
+import com.haru.pawprint.RegisterPetActivity;
+import com.haru.pawprint.SelectPetActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +30,16 @@ public class ScreenSlidePagerAdapter extends RecyclerView.Adapter<ScreenSlidePag
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cardview_main_date, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // 기록 화면으로 이동
+                context.startActivity(new Intent(context, RecordActivity.class));
+                ((Activity)context).finish();
+            }
+        });
+
         return new MyViewHolder(view);
     }
 

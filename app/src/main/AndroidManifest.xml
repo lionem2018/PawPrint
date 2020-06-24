@@ -13,7 +13,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingOpenSourceActivity"></activity>
+        <activity android:name=".RecordActivity"></activity>
+        <activity android:name=".SettingOpenSourceActivity" />
         <activity android:name=".SettingBugReportActivity" />
         <activity android:name=".SettingRemoveAllActivity" />
         <activity android:name=".SettingBackupActivity" />
