@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottomsheet_record_picture"
     android:layout_width="match_parent"
-    android:layout_height="212dp"
+    android:layout_height="162dp"
     android:background="@drawable/layout_round_ffffff"
     android:orientation="vertical"
-    app:behavior_peekHeight="117dp"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    app:behavior_peekHeight="110dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:elevation="3dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="212dp"
+        android:layout_height="162dp"
         android:orientation="vertical"
-        android:paddingBottom="50dp"
         android:gravity="center">
 
     <TextView
@@ -52,4 +52,40 @@
 
     </LinearLayout>
 
-</LinearLayout>
+<!--    &lt;!&ndash; change fragment button &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="@drawable/layout_round_a5a6ad"-->
+<!--        android:elevation="10dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_alignParentBottom="true">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="5"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="10dp"-->
+<!--                android:layout_height="8dp"-->
+<!--                android:background="@drawable/ic_upper_triangle"-->
+<!--                android:rotationX="180"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/nanumgothic"-->
+<!--                android:text="오늘의 건강"-->
+<!--                android:textColor="#686868"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+</RelativeLayout>

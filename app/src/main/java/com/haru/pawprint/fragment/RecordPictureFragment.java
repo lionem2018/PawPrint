@@ -15,10 +15,7 @@ public class RecordPictureFragment extends Fragment {
     private View rootView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-            rootView = (ViewGroup) inflater.inflate(
-                    R.layout.fragment_record_picture, container, false);
-        return rootView;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_record_picture, container, false);
     }
 }
