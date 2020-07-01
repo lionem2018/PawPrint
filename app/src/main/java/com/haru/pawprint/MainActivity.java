@@ -2,23 +2,13 @@ package com.haru.pawprint;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.haru.pawprint.fragment.CardViewFragment;
-import com.haru.pawprint.util.ScreenSlidePagerAdapter;
+import com.haru.pawprint.adapter.ScreenSlidePagerAdapter;
 
-import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends FragmentActivity {

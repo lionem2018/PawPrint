@@ -1,19 +1,15 @@
-package com.haru.pawprint.util;
+package com.haru.pawprint.adapter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.haru.pawprint.R;
 import com.haru.pawprint.RecordActivity;
-import com.haru.pawprint.RegisterPetActivity;
-import com.haru.pawprint.SelectPetActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

@@ -1,19 +1,14 @@
-package com.haru.pawprint.util;
+package com.haru.pawprint.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
-import com.haru.pawprint.RegisterPetActivity;
-import com.haru.pawprint.SelectPetActivity;
 import com.haru.pawprint.database.entities.Pet;
 
 import java.util.ArrayList;
@@ -46,7 +41,7 @@ public class PetArrayAdapter extends BaseAdapter {
         if(view == null)
         {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.layout_pet_item, viewGroup, false);
+            view = inflater.inflate(R.layout.item_pet, viewGroup, false);
         }
 
         CircleImageView circleImageView = (CircleImageView) view.findViewById(R.id.circle_image_view_item_pet);

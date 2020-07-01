@@ -192,6 +192,8 @@ public class RegisterPetActivity extends BaseActivity {
     // ActivityResult를 Fragment로 넘김
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
         int request = requestCode & 0xffff;
 
         questionPageOneFragment.onActivityResult(request, resultCode, data);

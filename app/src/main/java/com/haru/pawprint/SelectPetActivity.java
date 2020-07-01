@@ -3,22 +3,18 @@ package com.haru.pawprint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.haru.pawprint.database.AppDatabase;
 import com.haru.pawprint.database.dao.PetDao;
 import com.haru.pawprint.database.entities.Pet;
-import com.haru.pawprint.util.PetArrayAdapter;
+import com.haru.pawprint.adapter.PetArrayAdapter;
 
 import java.util.List;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 
 public class SelectPetActivity extends BaseActivity{
 

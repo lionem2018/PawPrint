@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">하루 멍냥!</string>
     <string name="team_name">STUDIO HARU</string>
+
+    <string-array name="spinner_meal">
+        <item>주식</item>
+        <item>간식</item>
+        <item>영양제</item>
+    </string-array>
+
+    <string-array name="spinner_hospital">
+        <item>병원</item>
+        <item>약</item>
+    </string-array>
 </resources>
