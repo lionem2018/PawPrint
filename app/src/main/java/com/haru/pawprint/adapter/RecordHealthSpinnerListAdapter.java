@@ -60,6 +60,7 @@ public class RecordHealthSpinnerListAdapter extends RecyclerView.Adapter<RecordH
         private Spinner spinner;
         private EditText editText;
         private Context context;
+        private RecordHealthSpinnerItemAdapter spinnerItemAdapter;
 
         public RecordHealthListItemViewHolder(@NonNull View itemView, MODE mode, Context context) {
             super(itemView);
@@ -69,7 +70,9 @@ public class RecordHealthSpinnerListAdapter extends RecyclerView.Adapter<RecordH
 
             if(mode == MODE.MEAL)
             {
-                spinner.setAdapter(new RecordHealthSpinnerItemAdapter(context, new ArrayList<String>(Arrays.asList("주식", "간식", "영양제"))));
+                spinnerItemAdapter = new RecordHealthSpinnerItemAdapter(context, new ArrayList<String>(Arrays.asList("종류▼", "주식", "간식", "영양제")));
+                spinner.setAdapter(spinnerItemAdapter);
+                spinner.setSelection(0);
             }
         }
     }

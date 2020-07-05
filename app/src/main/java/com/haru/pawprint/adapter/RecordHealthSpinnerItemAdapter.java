@@ -1,15 +1,12 @@
 package com.haru.pawprint.adapter;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
@@ -50,7 +47,7 @@ public class RecordHealthSpinnerItemAdapter extends BaseAdapter {
         SpinnerViewHolder viewHolder;
         if(contvertView == null)
         {
-            view = LayoutInflater.from(context).inflate(R.layout.item_record_health_spinner_hint, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_record_health_spinner, viewGroup, false);
             viewHolder = new SpinnerViewHolder(view);
             view.setTag(viewHolder);
         }
@@ -79,8 +76,23 @@ public class RecordHealthSpinnerItemAdapter extends BaseAdapter {
             drawable.setStroke(2, Color.parseColor("#C1ABff"));
             viewHolder.textView.setText(spinnerItemList.get(i));
         }
+        else if(spinnerItemList.get(i).equals("종류▼")) {
+            viewHolder.textView.setText("");
+            viewHolder.textView.setHint(spinnerItemList.get(i));
+            viewHolder.textView.setHintTextColor(Color.parseColor("#959595"));
+            drawable.setColor(Color.parseColor("#E5E5E5"));
+            drawable.setStroke(2, Color.parseColor("#E5E5E5"));
+        }
 
         return view;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        if(position == 0)
+            return false;
+        else
+            return true;
     }
 
     private class SpinnerViewHolder extends RecyclerView.ViewHolder{
@@ -93,4 +105,5 @@ public class RecordHealthSpinnerItemAdapter extends BaseAdapter {
             textView = itemView.findViewById(R.id.textview_spinner_item);
         }
     }
+
 }
