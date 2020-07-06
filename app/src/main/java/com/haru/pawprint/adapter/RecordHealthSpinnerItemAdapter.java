@@ -76,6 +76,18 @@ public class RecordHealthSpinnerItemAdapter extends BaseAdapter {
             drawable.setStroke(2, Color.parseColor("#C1ABff"));
             viewHolder.textView.setText(spinnerItemList.get(i));
         }
+        else if(spinnerItemList.get(i).equals("약"))
+        {
+            drawable.setColor(Color.parseColor(("#FFCC69")));
+            drawable.setStroke(2, Color.parseColor("#FFCC69"));
+            viewHolder.textView.setText(spinnerItemList.get(i));
+        }
+        else if(spinnerItemList.get(i).equals("병원"))
+        {
+            drawable.setColor(Color.parseColor(("#FFA451")));
+            drawable.setStroke(2, Color.parseColor("#FFA451"));
+            viewHolder.textView.setText(spinnerItemList.get(i));
+        }
         else if(spinnerItemList.get(i).equals("종류▼")) {
             viewHolder.textView.setText("");
             viewHolder.textView.setHint(spinnerItemList.get(i));

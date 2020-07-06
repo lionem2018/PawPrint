@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout_record_health_list_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center">
+    
+    <Spinner
+        android:id="@+id/spinner_record_health_list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="12dp"
+        android:popupBackground="@drawable/layout_round_ffffff"
+        android:background="@null"/>
+    
+    <EditText
+        android:id="@+id/edittext_record_health_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="#686868"
+        android:fontFamily="@font/nanumgothic"
+        android:hint="총 20자 이내로 기록해주세요"
+        android:textColorHint="#959595" />
+
+</LinearLayout>
