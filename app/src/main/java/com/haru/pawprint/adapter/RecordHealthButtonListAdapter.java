@@ -44,7 +44,7 @@ public class RecordHealthButtonListAdapter extends RecyclerView.Adapter<RecordHe
 
     @Override
     public void onBindViewHolder(@NonNull RecordHealthListItemViewHolder holder, int position) {
-
+        holder.editText.setText(itemList.get(position));
     }
 
     @Override
@@ -55,13 +55,16 @@ public class RecordHealthButtonListAdapter extends RecyclerView.Adapter<RecordHe
     static class RecordHealthListItemViewHolder extends ViewHolder {
         private Button button;
         private EditText editText;
+        private int hour = 0, minute = 0;
 
         public RecordHealthListItemViewHolder(Context context, @NonNull View itemView) {
             super(itemView);
             button = itemView.findViewById(R.id.button_record_health_list_item);
             editText = itemView.findViewById(R.id.edittext_record_health_list_item);
 
-            int hour = 0, minute = 0;
+            GradientDrawable drawable = (GradientDrawable) button.getBackground();
+            drawable.setColor(Color.parseColor("#E5E5E5"));
+            drawable.setStroke(2, Color.parseColor("#E5E5E5"));
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override

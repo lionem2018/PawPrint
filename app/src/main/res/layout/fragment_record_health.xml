@@ -14,7 +14,10 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:paddingTop="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="7dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -428,6 +431,32 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="코페르니쿠스 다이어리"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/nanumgothic"
+                    android:textColor="#686868"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"/>
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

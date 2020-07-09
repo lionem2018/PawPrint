@@ -23,7 +23,6 @@ public class RecordHealthSpinnerListAdapter extends RecyclerView.Adapter<RecordH
     private MODE mode;
 
     public enum MODE {
-        PLAY,
         MEAL,
         HOSPITAL
     }
@@ -46,7 +45,7 @@ public class RecordHealthSpinnerListAdapter extends RecyclerView.Adapter<RecordH
 
     @Override
     public void onBindViewHolder(@NonNull RecordHealthListItemViewHolder holder, int position) {
-
+        holder.editText.setText(spinnerItemList.get(position));
     }
 
     @Override

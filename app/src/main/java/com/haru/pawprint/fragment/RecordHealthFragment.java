@@ -27,10 +27,10 @@ public class RecordHealthFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_record_health, container, false);
 
-        ArrayList<String> playList = new ArrayList<String>(Arrays.asList("1234", "1234"));
-        ArrayList<String> mealList = new ArrayList<String>(Arrays.asList("주식", "간식", "영양제"));
-        ArrayList<String> hospitalList = new ArrayList<String>(Arrays.asList("약", "병원"));
-        ArrayList<String> etcList = new ArrayList<String>(Arrays.asList("test","test"));
+        ArrayList<String> playList = new ArrayList<>();
+        ArrayList<String> mealList = new ArrayList<>();
+        ArrayList<String> hospitalList = new ArrayList<>();
+        ArrayList<String> etcList = new ArrayList<>();
 
         Button buttonAddPlayItem = view.findViewById(R.id.button_add_play_item);
         Button buttonAddMealItem = view.findViewById(R.id.button_add_meal_item);
@@ -53,10 +53,35 @@ public class RecordHealthFragment extends Fragment {
         recyclerViewListETC.setAdapter(new RecordHealthTextListAdapter(getContext(), etcList));
 
 
+        buttonAddPlayItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playList.add("");
+                recyclerViewListPlay.getAdapter().notifyItemInserted(playList.size()-1);
+            }
+        });
+
         buttonAddMealItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mealList.add("");
+                recyclerViewListMeal.getAdapter().notifyItemInserted(mealList.size() - 1);
+            }
+        });
+
+        buttonAddHospitalItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hospitalList.add("");
+                recyclerViewListHospital.getAdapter().notifyItemInserted(hospitalList.size()-1);
+            }
+        });
+
+        buttonAddETCItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                etcList.add("");
+                recyclerViewListETC.getAdapter().notifyItemInserted(etcList.size()-1);
             }
         });
 
