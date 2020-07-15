@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditPictureActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/textview_back_from_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:text="작성완료"
+            android:background="@drawable/layout_round_c9c9c9"
+            android:textColor="#F2F2F2"
+            android:textSize="13dp"
+            android:fontFamily="@font/nanumgothic"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="95dp"
+            android:layout_marginRight="95dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="2020.06.08"
+            android:textColor="#323232"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nanumgothic"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/layout_round_only_stroke_a7a7ae"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="416dp"
+            android:layout_marginRight="47dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/layout_round_ebebeb"
+            android:elevation="10dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="#BCBCBC"/>
+
+        <EditText
+            android:id="@+id/edittext_edit_picture_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:hint="간단한 짧은 글을 남겨보세요.(최대 30자)"
+            android:textColorHint="#9E9E9E"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:maxLength="30"
+            android:fontFamily="@font/nanumgothic"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            />
+
+        <EditText
+            android:id="@+id/edittext_edit_picture_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:hint="간단한 짧은 글을 남겨보세요.(최대 30자)"
+            android:textColorHint="#9E9E9E"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            android:maxLength="30"
+            android:fontFamily="@font/nanumgothic"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

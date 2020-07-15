@@ -8,8 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.haru.pawprint.EditPictureActivity;
 import com.haru.pawprint.R;
 import com.haru.pawprint.RecordActivity;
+import com.haru.pawprint.RegisterPetActivity;
+import com.haru.pawprint.SelectPetActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
