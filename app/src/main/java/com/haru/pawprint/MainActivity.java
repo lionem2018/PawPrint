@@ -36,10 +36,22 @@ public class MainActivity extends FragmentActivity {
 
         // 설정 화면 버튼
         Button btnSetting = findViewById(R.id.button_setting);
+        Button btnProfile = findViewById(R.id.button_profile);
+
         btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingActivity.class));
+
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(), EditProfileActivity.class));
 
                 // Acivity 전환 효과
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
