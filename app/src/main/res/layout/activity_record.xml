@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,8 +11,10 @@
 
     <FrameLayout
         android:id="@+id/framelayout_record_picture"
+        android:layout_above="@id/layout_go_record_health"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:elevation="5dp" />
 
     <!-- change fragment button -->
 
@@ -23,7 +25,8 @@
             android:background="@drawable/layout_round_a5a6ad"
             android:gravity="center"
             android:orientation="vertical"
-            android:elevation="10dp">
+            android:elevation="10dp"
+            android:layout_alignParentBottom="true">
 
             <ImageView
                 android:layout_width="10dp"
@@ -51,7 +54,8 @@
             android:background="@drawable/layout_round_a5a6ad"
             android:gravity="center"
             android:orientation="vertical"
-            android:elevation="10dp">
+            android:elevation="10dp"
+            android:layout_alignParentTop="true">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,7 +76,8 @@
 
     <FrameLayout
         android:id="@+id/framelayout_record_health"
+        android:layout_below="@id/layout_go_record_picture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</RelativeLayout>

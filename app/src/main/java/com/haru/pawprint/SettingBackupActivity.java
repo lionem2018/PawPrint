@@ -13,7 +13,7 @@ public class SettingBackupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_backup);
 
-        TextView btnBack = findViewById(R.id.textview_back_from_setting);
+        TextView btnBack = findViewById(R.id.textview_back);
         btnBack.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

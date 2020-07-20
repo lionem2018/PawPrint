@@ -13,9 +13,19 @@ public class EditPictureActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_picture);
 
-        TextView btnBack = findViewById(R.id.textview_back_from_setting);
+        TextView btnBack = findViewById(R.id.textview_back);
+        TextView btnConfirm = findViewById(R.id.button_confirm_edit);
 
         btnBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                finish();
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

@@ -87,4 +87,9 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

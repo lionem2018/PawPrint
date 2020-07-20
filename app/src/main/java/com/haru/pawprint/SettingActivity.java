@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -17,7 +15,7 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        TextView btnBack = findViewById(R.id.textview_back_from_setting);
+        TextView btnBack = findViewById(R.id.textview_back);
 
         RelativeLayout btnConfigLanguage = findViewById(R.id.layout_config_lang);
         RelativeLayout btnConfigAlarm = findViewById(R.id.layout_config_alarm);

@@ -35,7 +35,6 @@ public class ScreenSlidePagerAdapter extends RecyclerView.Adapter<ScreenSlidePag
 
                 // 기록 화면으로 이동
                 context.startActivity(new Intent(context, RecordActivity.class));
-                ((Activity)context).finish();
             }
         });
 
