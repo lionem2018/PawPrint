@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:layout_marginBottom="43dp"
+            android:layout_marginBottom="42dp"
             android:text="프로필 변경"
             android:fontFamily="@font/nanumgothic"
             android:textSize="35dp"
@@ -74,8 +74,6 @@
                 android:elevation="5dp"/>
 
         </RelativeLayout>
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -109,7 +107,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="32dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:layout_width="40dp"
@@ -122,21 +121,29 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/nanumgothic"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start|center_horizontal"
                         android:text="코페르니쿠스"
                         android:textSize="18dp"
                         android:textColor="#464646"
-                        android:fontFamily="@font/nanumgothic"/>
+                        android:fontFamily="@font/nanumgothic"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/button_edit_name"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="32dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:layout_width="40dp"
@@ -149,21 +156,29 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/nanumgothic"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start|center_horizontal"
                         android:text="이탈리안 그레이하운드"
                         android:textSize="18dp"
                         android:textColor="#464646"
-                        android:fontFamily="@font/nanumgothic"/>
+                        android:fontFamily="@font/nanumgothic"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/button_edit_type"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="32dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:layout_width="40dp"
@@ -176,21 +191,29 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/nanumgothic"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start|center_horizontal"
                         android:text="남자 아이"
                         android:textSize="18dp"
                         android:textColor="#464646"
-                        android:fontFamily="@font/nanumgothic"/>
+                        android:fontFamily="@font/nanumgothic"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/button_edit_gender"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="32dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:layout_width="40dp"
@@ -203,21 +226,29 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/nanumgothic"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start|center_horizontal"
                         android:text="20.02.02"
                         android:textSize="18dp"
                         android:textColor="#464646"
-                        android:fontFamily="@font/nanumgothic"/>
+                        android:fontFamily="@font/nanumgothic"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/button_edit_birthday"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp">
+                    android:layout_marginBottom="32dp"
+                    android:weightSum="1">
 
                     <TextView
                         android:layout_width="40dp"
@@ -230,14 +261,21 @@
                         android:textSize="20dp"
                         android:fontFamily="@font/nanumgothic"/>
 
-                    <EditText
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="left"
+                        android:gravity="start|center_horizontal"
                         android:text="20.02.02"
                         android:textSize="18dp"
                         android:textColor="#464646"
-                        android:fontFamily="@font/nanumgothic"/>
+                        android:fontFamily="@font/nanumgothic"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/button_edit_adapt"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
 
