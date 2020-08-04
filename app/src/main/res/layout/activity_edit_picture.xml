@@ -61,7 +61,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/nanumgothic"
             android:layout_marginTop="28dp"
-            android:background="@drawable/layout_round_only_stroke_a7a7ae"/>
+            android:background="@drawable/layout_round_only_stroke_a7a7ae_corner_14"/>
 
         <ImageView
             android:layout_width="match_parent"

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/textview_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circle_image_view"
+                android:layout_gravity="center"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:elevation="3dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:civ_border_width="5dp"
+                app:civ_border_color="@color/buttonVisibleStateColor"
+                android:src="@drawable/button_pick_picture" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="코페르니쿠스"
+                android:textColor="#464646"
+                android:textSize="37dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center"
+                android:text="이탈리안 그레이하운드"
+                android:textColor="#797979"
+                android:fontFamily="@font/nanumgothic"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/button_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="반려동물 정보 수정"
+                android:textColor="#686868"
+                android:textSize="13dp"
+                android:fontFamily="@font/nanumgothic"
+                android:textStyle="bold"
+                android:background="@drawable/layout_round_only_stroke_a7a7ae_corner_20"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="몸무게"
+                        android:textColor="#686868"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="14.3Kg"
+                        android:textColor="#3D3D3D"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"
+                        android:textSize="22dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="태어난 지"
+                        android:textColor="#686868"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="9999일"
+                        android:textColor="#3D3D3D"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"
+                        android:textSize="22dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="나와 함께"
+                        android:textColor="#686868"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="9999일"
+                        android:textColor="#3D3D3D"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/nanumgothic"
+                        android:textSize="22dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="66dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="96dp"
+                        android:layout_height="1dp"
+                        android:background="#363636"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이달의 통계"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/nanumgothic"
+                        android:textColor="#464646"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"/>
+
+                    <View
+                        android:layout_width="96dp"
+                        android:layout_height="1dp"
+                        android:background="#363636"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="25dp"
+                    android:orientation="vertical"
+                    android:elevation="5dp"
+                    android:background="@drawable/layout_round_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
+                        android:text="강아지 컨디션 통계"
+                        android:textColor="#797979"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:elevation="5dp"
+                    android:background="@drawable/layout_round_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
+                        android:text="몸무게 변화"
+                        android:textColor="#797979"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:elevation="5dp"
+                    android:background="@drawable/layout_round_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
+                        android:text="미용 빈도"
+                        android:textColor="#797979"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:elevation="5dp"
+                    android:background="@drawable/layout_round_ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
+                        android:text="산책 빈도"
+                        android:textColor="#797979"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/nanumgothic"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="7dp"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="코페르니쿠스 다이어리"
+                    android:textSize="10dp"
+                    android:fontFamily="@font/nanumgothic"
+                    android:textColor="#686868"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"/>
+
+                <View
+                    android:layout_width="56dp"
+                    android:layout_height="1dp"
+                    android:background="#363636"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

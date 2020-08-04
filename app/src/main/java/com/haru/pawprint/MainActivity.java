@@ -51,7 +51,7 @@ public class MainActivity extends FragmentActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplication(), EditProfileActivity.class));
+                startActivity(new Intent(getApplication(), ProfileActivity.class));
 
                 // Acivity 전환 효과
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
