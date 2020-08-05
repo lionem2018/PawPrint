@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/textview_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="41dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_calendar_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2020"
+            android:textColor="#6C6C6C"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nanumgothic"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        
+        <TextView
+            android:id="@+id/textview_prev_month"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="◀"
+            android:textSize="13dp"
+            android:background="#FFFF"
+            android:textColor="#696969"
+            android:fontFamily="@font/nanumgothic"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+                android:id="@+id/textview_calendar_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FEB"
+                android:textSize="40dp"
+                android:textStyle="bold"
+                android:textColor="#2C2C2C"
+                android:fontFamily="@font/nanumgothic"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_next_month"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="▶"
+            android:textSize="13dp"
+            android:background="#FFFF"
+            android:textColor="#696969"
+            android:fontFamily="@font/nanumgothic"/>
+
+        </LinearLayout>
+                
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="7">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="일"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="월"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="화"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="수"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="목"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="금"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="토"
+                android:textColor="#9C9C9C"
+                android:textSize="17dp"
+                android:fontFamily="@font/nanumgothic"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_calendar_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
