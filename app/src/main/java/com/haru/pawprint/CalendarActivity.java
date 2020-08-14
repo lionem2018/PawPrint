@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.haru.pawprint.adapter.CalendarRecyclerViewAdapter;
+import com.haru.pawprint.dialog.MonthPickerDialog;
 import com.haru.pawprint.util.RecordCalendar;
 
 import java.text.SimpleDateFormat;
@@ -30,7 +33,16 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+        textViewYear = findViewById(R.id.textview_calendar_year);
+        textViewMonth = findViewById(R.id.textview_calendar_month);
+        calendarRecyclerViewAdapter = new CalendarRecyclerViewAdapter(this);
+
         TextView btnBack = findViewById(R.id.textview_back);
+        LinearLayout layoutShowMonthPicker = findViewById(R.id.layout_show_month_picker);
+        MonthPickerDialog monthPickerDialog = new MonthPickerDialog(this, calendarRecyclerViewAdapter);
+        monthPickerDialog.setCanceledOnTouchOutside(true);
+        monthPickerDialog.setCancelable(true);
+        monthPickerDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
 
         btnBack.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -42,13 +54,16 @@ public class CalendarActivity extends AppCompatActivity {
         });
 
         initView();
+
+        layoutShowMonthPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                monthPickerDialog.show();
+            }
+        });
     }
 
     private void initView() {
-        textViewYear = findViewById(R.id.textview_calendar_year);
-        textViewMonth = findViewById(R.id.textview_calendar_month);
-        calendarRecyclerViewAdapter = new CalendarRecyclerViewAdapter(this);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerview_calendar_date);
         TextView textViewPrevMonth = findViewById(R.id.textview_prev_month);
         TextView textViewNextMonth = findViewById(R.id.textview_next_month);

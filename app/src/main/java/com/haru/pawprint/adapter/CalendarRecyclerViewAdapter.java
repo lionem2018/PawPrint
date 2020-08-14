@@ -65,6 +65,11 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
         refreshView(recordCalendar.getCalendarInstance());
     }
 
+    public void changeMonth(int year, int month){
+        recordCalendar.changeMonth(year, month);
+        refreshView(recordCalendar.getCalendarInstance());
+    }
+
     private void refreshView(Calendar calendar) {
         notifyDataSetChanged();
         activity.refreshCurrentMonth(calendar);

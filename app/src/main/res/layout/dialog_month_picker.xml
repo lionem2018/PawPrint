@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/layout_big_round_ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageview_year_up"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:paddingTop="19dp"
+        android:paddingBottom="19dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:src="@drawable/ic_upper_arrow"/>
+
+    <TextView
+        android:id="@+id/textview_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2020"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#272727"
+        android:fontFamily="@font/nanumgothic"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="5dp"
+        android:background="#272727"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radiogroup_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:weightSum="4"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_jan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="JAN"
+                    android:textSize="20dp"
+                    android:textColor="#272727"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_feb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="FEB"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_mar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="MAR"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_apr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="APR"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:weightSum="4"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_may"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="MAY"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_jun"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="JUN"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_jul"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="JUL"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_aug"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="AUG"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:weightSum="4"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_sep"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="SEP"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_oct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="OCT"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_nov"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="NOV"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+                <RadioButton
+                    android:id="@+id/radiobutton_dec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@drawable/radio_button_month"
+                    android:text="DEC"
+                    android:textSize="20dp"
+                    android:textColor="#A0A0A0"
+                    android:fontFamily="@font/nanumgothic"/>
+
+            </LinearLayout>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageview_year_down"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:paddingTop="19dp"
+        android:paddingBottom="19dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:src="@drawable/ic_lower_arrow"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

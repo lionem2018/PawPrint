@@ -62,6 +62,18 @@ public class RecordCalendar {
     }
 
     /**
+     * Change month
+     * @param year: year to change
+     * @param month: month to change
+     */
+
+    public void changeMonth(int year, int month){
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        makeMonthDate();
+    }
+
+    /**
      * make month date.
      */
     private void makeMonthDate() {
