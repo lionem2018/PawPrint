@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -54,19 +55,21 @@
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
-        <RadioGroup
-            android:id="@+id/radiogroup_month"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:weightSum="4"
+            android:layout_gravity="center"
+            android:gravity="center">
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/radiogroup_month1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:weightSum="4"
-                android:layout_gravity="center"
-                android:gravity="center">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radiobutton_jan"
@@ -78,7 +81,7 @@
                     android:button="@drawable/radio_button_month"
                     android:text="JAN"
                     android:textSize="20dp"
-                    android:textColor="#272727"
+                    android:textColor="#A0A0A0"
                     android:fontFamily="@font/nanumgothic"/>
 
                 <RadioButton
@@ -116,17 +119,24 @@
                     android:textSize="20dp"
                     android:textColor="#A0A0A0"
                     android:fontFamily="@font/nanumgothic"/>
+            </RadioGroup>
 
-            </LinearLayout>
+        </LinearLayout>
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:weightSum="4"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/radiogroup_month2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:weightSum="4"
-                android:layout_gravity="center"
-                android:gravity="center">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radiobutton_may"
@@ -176,16 +186,24 @@
                     android:textColor="#A0A0A0"
                     android:fontFamily="@font/nanumgothic"/>
 
-            </LinearLayout>
+            </RadioGroup>
 
-            <LinearLayout
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:weightSum="4"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/radiogroup_month3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:weightSum="4"
-                android:layout_gravity="center"
-                android:gravity="center">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/radiobutton_sep"
@@ -235,9 +253,9 @@
                     android:textColor="#A0A0A0"
                     android:fontFamily="@font/nanumgothic"/>
 
-            </LinearLayout>
+            </RadioGroup>
 
-        </RadioGroup>
+        </LinearLayout>
 
     </LinearLayout>
 

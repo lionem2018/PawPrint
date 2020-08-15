@@ -42,7 +42,7 @@ public class CalendarActivity extends AppCompatActivity {
         MonthPickerDialog monthPickerDialog = new MonthPickerDialog(this, calendarRecyclerViewAdapter);
         monthPickerDialog.setCanceledOnTouchOutside(true);
         monthPickerDialog.setCancelable(true);
-        monthPickerDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+//        monthPickerDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
 
         btnBack.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -59,6 +59,7 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 monthPickerDialog.show();
+                monthPickerDialog.checkYearMonth();
             }
         });
     }
