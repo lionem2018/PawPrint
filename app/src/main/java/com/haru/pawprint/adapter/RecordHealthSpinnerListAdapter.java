@@ -38,9 +38,8 @@ public class RecordHealthSpinnerListAdapter extends RecyclerView.Adapter<RecordH
     @Override
     public RecordHealthListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_record_health_list_with_spinner, parent, false);
-        RecordHealthListItemViewHolder viewHolder = new RecordHealthListItemViewHolder(view, mode, this.context);
 
-        return viewHolder;
+        return new RecordHealthListItemViewHolder(view, mode, this.context);
     }
 
     @Override

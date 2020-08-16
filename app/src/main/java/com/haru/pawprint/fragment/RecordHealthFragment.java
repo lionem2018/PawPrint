@@ -47,10 +47,10 @@ public class RecordHealthFragment extends Fragment {
         recyclerViewListHospital.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerViewListETC.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        recyclerViewListPlay.setAdapter(new RecordHealthButtonListAdapter(getContext(), playList));
+        recyclerViewListPlay.setAdapter(new RecordHealthButtonListAdapter(view.getContext(), playList));
         recyclerViewListMeal.setAdapter(new RecordHealthSpinnerListAdapter(RecordHealthSpinnerListAdapter.MODE.MEAL, view.getContext(), mealList));
-        recyclerViewListHospital.setAdapter(new RecordHealthSpinnerListAdapter(RecordHealthSpinnerListAdapter.MODE.HOSPITAL, getContext(), hospitalList));
-        recyclerViewListETC.setAdapter(new RecordHealthTextListAdapter(getContext(), etcList));
+        recyclerViewListHospital.setAdapter(new RecordHealthSpinnerListAdapter(RecordHealthSpinnerListAdapter.MODE.HOSPITAL, view.getContext(), hospitalList));
+        recyclerViewListETC.setAdapter(new RecordHealthTextListAdapter(view.getContext(), etcList));
 
 
         buttonAddPlayItem.setOnClickListener(new View.OnClickListener() {

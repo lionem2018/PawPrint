@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.haru.pawprint.CalendarActivity;
 import com.haru.pawprint.R;
+import com.haru.pawprint.dialog.HealthItemDialog;
 import com.haru.pawprint.util.RecordCalendar;
 
 import java.util.Calendar;
@@ -23,9 +24,15 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
     private RecordCalendar recordCalendar = new RecordCalendar();
     private CalendarActivity activity;
 
+    private HealthItemDialog healthItemDialog;
+
     public CalendarRecyclerViewAdapter(CalendarActivity activity){
         this.activity = activity;
         recordCalendar.initBaseCalendar(activity);
+
+        healthItemDialog = new HealthItemDialog(activity);
+        healthItemDialog.setCanceledOnTouchOutside(true);
+        healthItemDialog.setCancelable(true);
     }
 
 
@@ -51,6 +58,13 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
             holder.textView.setAlpha(0.3f);
         } else {
             holder.textView.setAlpha(1f);
+            holder.textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    healthItemDialog.show();
+                    healthItemDialog.setDialogTitle(getYear(), getMonth(), recordCalendar.data.get(position), position % RecordCalendar.DAYS_OF_WEEK);
+                }
+            });
         }
         holder.textView.setText(recordCalendar.data.get(position).toString());
     }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layout_record_health_list_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textview_dialog_health_list_type"
+        android:layout_width="58dp"
+        android:layout_height="28dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/layout_round_e5e5e5"
+        android:fontFamily="@font/nanumgothic"
+        android:gravity="center"
+        android:text="시간▼"
+        android:textColor="#959595"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/textview_dialog_health_list_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="#686868"
+        android:fontFamily="@font/nanumgothic"
+        android:text="총 20자 이내로 기록해주세요" />
+
+</LinearLayout>
