@@ -1,5 +1,6 @@
 package com.haru.pawprint.adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.view.Display;
@@ -14,9 +15,11 @@ import com.haru.pawprint.R;
 import com.haru.pawprint.dialog.HealthItemDialog;
 import com.haru.pawprint.util.RecordCalendar;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRecyclerViewAdapter.CalendarViewHolder> {
@@ -40,7 +43,7 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
     @Override
     public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar, parent, false);
-        return new CalendarViewHolder(view);
+        return new CalendarViewHolder(view, activity);
     }
 
     @Override
@@ -58,13 +61,18 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
             holder.textView.setAlpha(0.3f);
         } else {
             holder.textView.setAlpha(1f);
-            holder.textView.setOnClickListener(new View.OnClickListener() {
+            holder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     healthItemDialog.show();
                     healthItemDialog.setDialogTitle(getYear(), getMonth(), recordCalendar.data.get(position), position % RecordCalendar.DAYS_OF_WEEK);
                 }
             });
+
+            ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList = new ArrayList<>();
+            healthList.add(new DialogHealthListItemAdapter.HealthListItem(1, "11:00", "탄천 산책"));
+
+            holder.recyclerView.setAdapter(new DateHealthListItemAdapter(activity, healthList));
         }
         holder.textView.setText(recordCalendar.data.get(position).toString());
     }
@@ -99,10 +107,15 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
 
     class CalendarViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        RecyclerView recyclerView;
+        LinearLayout linearLayout;
 
-        public CalendarViewHolder(@NonNull View itemView) {
+        public CalendarViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
+            linearLayout = itemView.findViewById(R.id.layout_item_calendar_date);
             textView = itemView.findViewById(R.id.textview_date);
+            recyclerView = itemView.findViewById(R.id.recyclerview_date_health_list);
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
         }
     }
 }

@@ -15,33 +15,33 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class DialogHealthListItemAdapter extends RecyclerView.Adapter<DialogHealthListItemAdapter.DialogHealthListItemViewHolder> {
+public class DateHealthListItemAdapter extends RecyclerView.Adapter<DateHealthListItemAdapter.DateHealthListItemViewHolder> {
 
     private Context context;
-    private ArrayList<HealthListItem> healthListItems;
+    private ArrayList<DialogHealthListItemAdapter.HealthListItem> healthListItems;
 
-    public DialogHealthListItemAdapter(@NonNull Context context, ArrayList<HealthListItem> itemList){
+    public DateHealthListItemAdapter(@NonNull Context context, ArrayList<DialogHealthListItemAdapter.HealthListItem> itemList){
         this.context = context;
         this.healthListItems = itemList;
     }
 
     @NonNull
     @Override
-    public DialogHealthListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_dialog_health_list, parent, false);
+    public DateHealthListItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_date_health_list, parent, false);
 
-        return new DialogHealthListItemViewHolder(view);
+        return new DateHealthListItemViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DialogHealthListItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DateHealthListItemViewHolder holder, int position) {
         holder.textViewType.setText(healthListItems.get(position).type);
-        holder.textViewText.setText(healthListItems.get(position).text);
 
         GradientDrawable drawable = (GradientDrawable) holder.textViewType.getBackground();
 
         switch(healthListItems.get(position).mode){
             case 1: // 산책
+                holder.textViewType.setText("산책");
                 drawable.setColor(Color.parseColor("#FBA8A8"));
                 drawable.setStroke(2, Color.parseColor("#FBA8A8"));
                 break;
@@ -73,29 +73,14 @@ public class DialogHealthListItemAdapter extends RecyclerView.Adapter<DialogHeal
         return healthListItems.size();
     }
 
-    static class DialogHealthListItemViewHolder extends RecyclerView.ViewHolder {
+    static class DateHealthListItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewType;
-        private TextView textViewText;
 
-        public DialogHealthListItemViewHolder(@NonNull View itemView) {
+        public DateHealthListItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewType = itemView.findViewById(R.id.textview_dialog_health_list_type);
-            textViewText = itemView.findViewById(R.id.textview_dialog_health_list_text);
-        }
-    }
-
-    public static class HealthListItem{
-        int mode;
-        String type;
-        String text;
-
-        public HealthListItem(int mode, String type, String text)
-        {
-            this.mode = mode;
-            this.type = type;
-            this.text = text;
+            textViewType = itemView.findViewById(R.id.textview_date_health_list_type);
         }
     }
 }
