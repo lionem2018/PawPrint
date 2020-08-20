@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeStampActivity"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:id="@+id/textview_back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:text="◀돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pic_example"
+        android:fitsSystemWindows="true"/>
+
+    <include layout="@layout/bottomsheet_time_stamp_picture_list"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

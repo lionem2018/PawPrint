@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomsheet_time_stamp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_round_ffffff"
+    android:orientation="vertical"
+    app:behavior_peekHeight="130dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:elevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_time_stamp_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="2020"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#6C6C6C"
+            android:fontFamily="@font/nanumgothic"
+            android:layout_gravity="center"/>
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:background="#686868"/>
+
+        <TextView
+            android:id="@+id/textview_time_stamp_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="DEC"
+            android:textColor="#2C2C2C"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:fontFamily="@font/nanumgothic"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_time_stamp_picture_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:overScrollMode="never"/>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

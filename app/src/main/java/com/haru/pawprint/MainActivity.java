@@ -38,6 +38,7 @@ public class MainActivity extends FragmentActivity {
         Button btnSetting = findViewById(R.id.button_setting);
         Button btnProfile = findViewById(R.id.button_profile);
         Button btnCalendar = findViewById(R.id.button_calendar);
+        Button btnTimeStamp = findViewById(R.id.button_timestamp);
 
         btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +64,16 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), CalendarActivity.class));
+
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        btnTimeStamp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(), TimeStampActivity.class));
 
                 // Acivity 전환 효과
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
