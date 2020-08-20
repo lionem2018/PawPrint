@@ -15,6 +15,8 @@ import com.haru.pawprint.TimeStampActivity;
 import com.haru.pawprint.dialog.HealthItemDialog;
 import com.haru.pawprint.util.RecordCalendar;
 
+import org.w3c.dom.Text;
+
 import java.net.URI;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -49,15 +51,23 @@ public class TimeStampRecyclerViewAdapter extends RecyclerView.Adapter<TimeStamp
     @Override
     public void onBindViewHolder(@NonNull TimeStampViewHolder holder, int position) {
 //        holder.imageView.setImageURI(uriArrayList.get(position));
-        holder.imageView.setImageResource(R.drawable.pic_example);
+        if(position == getItemCount()-1) {
+            holder.imageView.setVisibility(View.GONE);
+            holder.textView.setVisibility(View.VISIBLE);
+        }else {
+            holder.textView.setVisibility(View.GONE);
+            holder.imageView.setBackgroundResource(R.drawable.pic_example);
+        }
     }
 
     class TimeStampViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+        TextView textView;
 
         public TimeStampViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageview_item_time_stamp);
+            textView = itemView.findViewById(R.id.textview_item_time_stamp);
         }
     }
 }
