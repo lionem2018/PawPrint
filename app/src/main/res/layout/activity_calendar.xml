@@ -20,7 +20,7 @@
             android:paddingRight="15dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="◀돌아가기"
+            android:text="◀ 돌아가기"
             android:textSize="13dp"
             android:textColor="#686868"
             android:fontFamily="@font/nanumgothic"
@@ -196,7 +196,10 @@
             android:id="@+id/recyclerview_calendar_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:background="#CCCCCC"
+            android:overScrollMode="never"
+            />
 
     </LinearLayout>
 

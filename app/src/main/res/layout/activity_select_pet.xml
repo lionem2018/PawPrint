@@ -10,39 +10,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="16dp" />
-
         <ImageView
             android:layout_gravity="center"
             android:layout_width="114dp"
             android:layout_height="33.18dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/title"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"/>
-
-        <FrameLayout
-            android:id="@+id/framelayout_page"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="누구를 기록할까요?"
+            android:layout_marginBottom="60dp"
+            android:text="@string/title_select_pet"
             android:textAlignment="center"
             android:textColor="@color/pageNameColor"
             android:fontFamily="@font/lottemartdreambold"
             android:textSize="35dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="center"/>
 
         <ListView
             android:id="@+id/listView_pet_list"
@@ -82,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="반려동물 추가하기"
+                    android:text="@string/button_add_pet"
                     android:textSize="12dp"
                     android:textColor="#CBCBCB"
                     android:fontFamily="@font/nanumgothic"/>
@@ -96,6 +81,7 @@
     <LinearLayout
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:paddingBottom="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -103,14 +89,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="최대 4마리까지 등록이 가능합니다."
+            android:text="@string/hint_select_pet"
             android:textSize="12dp"
             android:textColor="@color/editTextHintColor"
             android:fontFamily="@font/nanumgothic"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="12dp"/>
 
     </LinearLayout>
 

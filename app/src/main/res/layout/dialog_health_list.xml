@@ -2,19 +2,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="350dp"
-    android:layout_height="wrap_content"
+    android:layout_height="500dp"
     android:orientation="vertical"
     android:layout_gravity="center"
+    android:paddingLeft="19dp"
+    android:paddingRight="19dp"
+    android:paddingBottom="17dp"
+    android:paddingTop="17dp"
     android:background="@drawable/layout_big_round_ffffff">
 
     <LinearLayout
+        android:id="@+id/dialog_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="19dp"
-        android:layout_marginRight="19dp"
+        app:layout_constraintBottom_toTopOf="@id/layout_go_diary"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constrainedHeight="true">
 
         <TextView
             android:id="@+id/textview_dialog_title"
@@ -25,7 +30,6 @@
             android:textSize="25dp"
             android:fontFamily="@font/nanumgothic"
             android:textStyle="bold"
-            android:layout_marginTop="17dp"
             android:layout_marginBottom="22dp"/>
 
         <TextView
@@ -44,7 +48,7 @@
             android:background="#5D5E6E"/>
 
         <androidx.core.widget.NestedScrollView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -54,6 +58,18 @@
                 android:overScrollMode="never"/>
 
         </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_go_diary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_title"
+        app:layout_constrainedHeight="true">
 
         <View
             android:layout_width="match_parent"
@@ -67,7 +83,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="6dp"
-            android:layout_marginBottom="10dp"
             android:text="이 날의 다이어리 바로가기"
             android:textColor="#686868"
             android:textStyle="bold"

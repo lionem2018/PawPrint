@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.haru.pawprint.adapter.ScreenSlidePagerAdapter;
 
@@ -34,12 +35,30 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 돌아가기 버튼
+        TextView btnBack = findViewById(R.id.textview_back);
+
         // 설정 화면 버튼
         Button btnSetting = findViewById(R.id.button_setting);
+        // 펫 프로필 버튼
         Button btnProfile = findViewById(R.id.button_profile);
+        // 캘린더 버튼
         Button btnCalendar = findViewById(R.id.button_calendar);
+        // 타임 스탬프 버튼
         Button btnTimeStamp = findViewById(R.id.button_timestamp);
 
+        // 펫 선택 화면으로 이동
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplication(), SelectPetActivity.class));
+                // Acivity 전환 효과
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                finish();
+            }
+        });
+
+        // 설정 화면으로 이동
         btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +69,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        // 펫 프로필 화면으로 이동
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +80,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        // 캘린더 화면으로 이동
         btnCalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +91,7 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        // 타임 스탬프 화면으로 이동
         btnTimeStamp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,7 +105,6 @@ public class MainActivity extends FragmentActivity {
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager2) findViewById(R.id.viewpager);
         pagerAdapter = new ScreenSlidePagerAdapter(this);
-//        mPager.setAdapter(pagerAdapter);
         mPager.setAdapter(pagerAdapter);
         mPager.setOffscreenPageLimit(3);
 
@@ -112,45 +133,6 @@ public class MainActivity extends FragmentActivity {
             } else {
                 page.setTranslationY(myOffset);
             }
-//
-//                page.setTranslationX(position * -offsetPx);
         });
     }
-
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
-//    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-//        public ScreenSlidePagerAdapter(FragmentManager fm) {
-//            super(fm);
-//        }
-//
-//        @Override
-//        public Fragment getItem(int position) {
-//            return new CardViewFragment();
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return NUM_PAGES;
-//        }
-//    }
-
-//    // An equivalent ViewPager2 adapter class
-//    private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
-//        public ScreenSlidePagerAdapter(FragmentActivity fa) {
-//            super(fa);
-//        }
-//
-//        @Override
-//        public Fragment createFragment(int position) {
-//            return new CardViewFragment();
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return NUM_PAGES;
-//        }
-//    }
 }

@@ -53,6 +53,28 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
 
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
+        ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList = new ArrayList<>();
+
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(1, "11:00", "탄천 산책"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(2, "주식", "하림 펫사료"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(3, "간식", "버거킹 독퍼"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(4, "영양제", "눈물싹싹"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+        healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
+
+
+
         if (position % RecordCalendar.DAYS_OF_WEEK == 0) holder.textView.setTextColor(Color.parseColor("#DC0000"));
         else holder.textView.setTextColor(Color.parseColor("#1C1C1C"));
 
@@ -64,13 +86,11 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
             holder.linearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    healthItemDialog.setItemArrayList(healthList);
                     healthItemDialog.show();
                     healthItemDialog.setDialogTitle(getYear(), getMonth(), recordCalendar.data.get(position), position % RecordCalendar.DAYS_OF_WEEK);
                 }
             });
-
-            ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList = new ArrayList<>();
-            healthList.add(new DialogHealthListItemAdapter.HealthListItem(1, "11:00", "탄천 산책"));
 
             holder.recyclerView.setAdapter(new DateHealthListItemAdapter(activity, healthList));
         }

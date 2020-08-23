@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:padding="32dp">
 
     <TextView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="추가 정보를\n기입해주세요"
+        android:text="@string/title_question_page_two"
         android:textAlignment="center"
         android:textColor="@color/pageNameColor"
         android:fontFamily="@font/lottemartdreambold"
         android:textSize="35dp"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="60dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
             android:text="성별이 어떻게 되나요?"
             android:textSize="20dp"
             android:fontFamily="@font/lottemartdreambold"
             android:textColor="@color/questionColor"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"/>
 
         <RadioGroup
             android:id="@+id/radio_group_gender"
@@ -46,17 +40,15 @@
                 android:id="@+id/radio_button_male"
                 android:layout_width="140dp"
                 android:layout_height="36dp"
+                android:layout_marginEnd="14dp"
                 android:button="@null"
                 android:text="남자아이"
                 android:textColor="@color/buttonTextColor"
                 android:fontFamily="@font/nanumgothic"
                 android:textSize="16dp"
                 android:gravity="center"
-                android:background="@drawable/radio_button_normal"/>
-
-            <View
-                android:layout_width="14dp"
-                android:layout_height="match_parent"/>
+                android:background="@drawable/radio_button_normal"
+                android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/radio_button_female"
@@ -74,26 +66,20 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
             android:text="생일이 언제인가요?"
             android:textSize="20dp"
             android:fontFamily="@font/lottemartdreambold"
             android:textColor="@color/questionColor"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -114,35 +100,28 @@
 
             <Button
                 android:id="@+id/button_cal_birthday"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="@drawable/cal_icon"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
             android:text="언제 가족이 되었나요?"
             android:textSize="20dp"
             android:fontFamily="@font/lottemartdreambold"
             android:textColor="@color/questionColor"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"/>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,8 +142,8 @@
 
             <Button
                 android:id="@+id/button_cal_adopt"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="@drawable/cal_icon"/>
 
         </LinearLayout>
@@ -173,6 +152,6 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="65dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

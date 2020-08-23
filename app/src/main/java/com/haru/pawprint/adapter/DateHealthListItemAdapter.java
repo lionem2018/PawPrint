@@ -35,6 +35,13 @@ public class DateHealthListItemAdapter extends RecyclerView.Adapter<DateHealthLi
 
     @Override
     public void onBindViewHolder(@NonNull DateHealthListItemViewHolder holder, int position) {
+
+        // 4번째 아이템부터는 달력에 표시하지 않음
+        if (position > 2) {
+            holder.textViewType.setVisibility(View.GONE);
+            return;
+        }
+
         holder.textViewType.setText(healthListItems.get(position).type);
 
         GradientDrawable drawable = (GradientDrawable) holder.textViewType.getBackground();

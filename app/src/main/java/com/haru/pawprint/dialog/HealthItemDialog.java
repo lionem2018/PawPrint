@@ -27,6 +27,8 @@ public class HealthItemDialog extends Dialog {
 
     private Context context;
 
+    private ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList;
+
     private int year;
     private int month;
     private int date;
@@ -36,6 +38,10 @@ public class HealthItemDialog extends Dialog {
         super(context);
 
         this.context = context;
+    }
+
+    public void setItemArrayList(ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList){
+        this.healthList = healthList;
     }
 
     @Override
@@ -51,9 +57,6 @@ public class HealthItemDialog extends Dialog {
 
         TextView textViewGoDiary = findViewById(R.id.textview_go_diary);
         RecyclerView recyclerViewHealthList = findViewById(R.id.recyclerview_dialog_healthlist);
-
-        ArrayList<DialogHealthListItemAdapter.HealthListItem> healthList = new ArrayList<>();
-        healthList.add(new DialogHealthListItemAdapter.HealthListItem(1, "11:00", "탄천 산책"));
 
         recyclerViewHealthList.setLayoutManager(new LinearLayoutManager(context));
         recyclerViewHealthList.setAdapter(new DialogHealthListItemAdapter(getContext(), healthList));

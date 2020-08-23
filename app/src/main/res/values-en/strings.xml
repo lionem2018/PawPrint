@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PawPrint</string>
-    <string name="team_name">STUDIO HARU</string>
+    <!-- App Info -->
+    <string name="app_name">PawPrint!</string>
+    <string name="team_name">PLAYGROUND HARU</string>
+    <string name="app_version">ver 1.0.0</string>
+
+    <!-- Page Title-->
+    <string name="title_select_pet">Select Pet</string>
+    <string name="title_question_page_one">Introduce Your Pet</string>
+    <string name="title_question_page_two">Edit More Info</string>
+
+    <!-- Button Text -->
+    <string name="button_add_pet">Add Pet</string>
+    <string name="button_next_page">next</string>
+    <string name="button_prev_page">prev</string>
+
+    <!-- Spinner Item Text -->
+    <string-array name="spinner_meal">
+        <item>Meal</item>
+        <item>Snak</item>
+        <item>Supplements</item>
+    </string-array>
+
+    <string-array name="spinner_hospital">
+        <item>Hospital</item>
+        <item>Medicine</item>
+    </string-array>
+
+    <!-- Hint Text -->
+    <string name="hint_select_pet">You can register maximum 4 pets</string>
+
+    <!-- Normal Text -->
+    <string name="text_edit_type">Edit your pet\'s type</string>
+    <string name="text_edit_name">Edit your pet\'s name</string>
 </resources>

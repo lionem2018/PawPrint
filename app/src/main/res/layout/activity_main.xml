@@ -8,13 +8,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp">
-
-        <Button
-            android:id="@+id/button_search"
-            android:layout_width="48dp"
+        <TextView
+            android:id="@+id/textview_back"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:background="@drawable/ic_search"/>
-
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="16dp"
+            android:text="◀ 돌아가기"
+            android:textSize="13dp"
+            android:textColor="#686868"
+            android:fontFamily="@font/nanumgothic"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -86,7 +91,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="440dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
         android:layout_gravity="center">
 
         <androidx.viewpager2.widget.ViewPager2

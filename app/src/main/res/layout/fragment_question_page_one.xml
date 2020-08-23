@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:padding="32dp">
 
     <TextView
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="당신의 반려동물을 \n 소개해주세요"
+        android:text="@string/title_question_page_one"
         android:textAlignment="center"
         android:textColor="@color/pageNameColor"
         android:fontFamily="@font/lottemartdreambold"
         android:textSize="35dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="60dp"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="어떤 반려 동물인가요?"
+                android:layout_marginBottom="18dp"
+                android:text="@string/text_edit_type"
                 android:textSize="20dp"
                 android:fontFamily="@font/lottemartdreambold"
                 android:textColor="@color/questionColor"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="18dp"/>
 
             <EditText
                 android:id="@+id/edit_text_type"
@@ -70,14 +64,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
                 android:text="이름이 어떻게 되나요?"
                 android:textSize="20dp"
                 android:fontFamily="@font/lottemartdreambold"
                 android:textColor="@color/questionColor"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="18dp"/>
 
             <EditText
                 android:id="@+id/edit_text_name"
@@ -102,13 +93,10 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -142,5 +130,9 @@
                 android:src="@drawable/button_pick_picture"/>
 
         </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

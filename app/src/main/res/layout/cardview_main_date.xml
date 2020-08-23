@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginLeft="@dimen/pageMarginAndOffset"
-    android:layout_marginRight="@dimen/pageMarginAndOffset"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/pageMarginAndOffset"
+    android:layout_marginRight="@dimen/pageMarginAndOffset"
     android:layout_gravity="center"
+    android:elevation="3dp"
     android:gravity="center"
-    android:background="@drawable/layout_round_ebebeb"
-    android:elevation="3dp">
+    app:cardUseCompatPadding="true"
+    android:background="@drawable/layout_round_ebebeb">
 
-    <androidx.cardview.widget.CardView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:weightSum="6"
         android:layout_gravity="center"
-        android:gravity="center"
-        app:cardUseCompatPadding="true">
+        android:background="@drawable/gradient">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/gradient">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
 
-
-            <ImageView
-                android:id="@+id/img_cardview"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_vertical|left"
-                android:background="@drawable/pic_example"/>
+                android:text="hello"
+                android:textSize="16dp"
+                android:textColor="#2B2B2B"/>
 
-        </FrameLayout>
+        </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/img_cardview"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:background="@drawable/pic_example"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

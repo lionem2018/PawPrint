@@ -1,7 +1,20 @@
 <resources>
-    <string name="app_name">하루 멍냥!</string>
-    <string name="team_name">STUDIO HARU</string>
+    <!-- App Info -->
+    <string name="app_name">하루멍냥!</string>
+    <string name="team_name">PLAYGROUND HARU</string>
+    <string name="app_version">ver 1.0.0</string>
 
+    <!-- Page Title -->
+    <string name="title_select_pet">누구를 기록할까요?</string>
+    <string name="title_question_page_one">당신의 반려동물을 \n 소개해주세요</string>
+    <string name="title_question_page_two">추가 정보를\n기입해주세요</string>
+
+    <!-- Button Text -->
+    <string name="button_add_pet">반려동물 추가하기</string>
+    <string name="button_next_page">다음</string>
+    <string name="button_prev_page">이전</string>
+
+    <!-- Spinner Item Text -->
     <string-array name="spinner_meal">
         <item>주식</item>
         <item>간식</item>
@@ -12,4 +25,11 @@
         <item>병원</item>
         <item>약</item>
     </string-array>
+
+    <!-- Hint Text -->
+    <string name="hint_select_pet">최대 4마리까지 등록 가능합니다.</string>
+
+    <!-- Normal Text -->
+    <string name="text_edit_type">어떤 반려 동물인가요?</string>
+    <string name="text_edit_name">이름이 어떻게 되나요?</string>
 </resources>
