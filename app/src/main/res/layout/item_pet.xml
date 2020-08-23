@@ -10,21 +10,21 @@
         android:gravity="center"
         android:layout_width="300dp"
         android:layout_height="80dp"
+        android:paddingLeft="100dp"
         android:orientation="vertical"
         android:background="@drawable/layout_round_ffffff"
-        android:padding="15dp"
         android:elevation="3dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|end"
+            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textview_item_pet_name"
-                android:layout_gravity="center_vertical|end"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="코페르니쿠스"
@@ -34,7 +34,7 @@
 
             <TextView
                 android:id="@+id/textview_item_pet_type"
-                android:layout_gravity="center_vertical|end"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이탈리안 그레이하운드"
