@@ -61,9 +61,7 @@ public class RecordActivity extends AppCompatActivity {
                 // 프래그먼트 전환 애니메이션 등록
                 fragmentTransaction.setCustomAnimations(R.anim.in_up, R.anim.out_down, R.anim.in_up, R.anim.out_down);
                 // 첫번째 프래그먼트 숨기고 두번째 프래그먼트 보이기
-                fragmentTransaction.hide(recordHealthFragment)
-                        .show(recordPictureFragment)
-                        .commit();
+                fragmentTransaction.show(recordPictureFragment).hide(recordHealthFragment).commit();
 
                 btnGoRecordHealth.setVisibility(View.VISIBLE);
                 view.setVisibility(GONE);
@@ -78,9 +76,7 @@ public class RecordActivity extends AppCompatActivity {
                 // 프래그먼트 전환 애니메이션 등록
                 fragmentTransaction.setCustomAnimations(R.anim.in_down, R.anim.out_up, R.anim.in_down, R.anim.out_up);
                 // 첫번째 프래그먼트 숨기고 두번째 프래그먼트 보이기
-                fragmentTransaction.hide(recordPictureFragment)
-                        .show(recordHealthFragment)
-                        .commit();
+                fragmentTransaction.show(recordHealthFragment).hide(recordPictureFragment).commit();
 
                 btnGoRecordPicture.setVisibility(View.VISIBLE);
                 view.setVisibility(GONE);

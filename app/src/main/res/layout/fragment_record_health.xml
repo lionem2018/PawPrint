@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -240,7 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -279,6 +282,7 @@
                     android:id="@+id/recyclerview_list_play"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:overScrollMode="never"/>
 
             </LinearLayout>
@@ -288,7 +292,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -337,7 +341,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -376,6 +380,7 @@
                     android:id="@+id/recyclerview_list_hospital"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:overScrollMode="never">
 
                 </androidx.recyclerview.widget.RecyclerView>
@@ -426,6 +431,7 @@
                     android:id="@+id/recyclerview_list_etc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:overScrollMode="never"/>
 
             </LinearLayout>
@@ -433,6 +439,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
                 android:gravity="center">
 

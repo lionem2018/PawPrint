@@ -39,8 +39,10 @@
 
         <!-- add pet custom button -->
         <LinearLayout
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:gravity="center">
@@ -49,7 +51,7 @@
                 android:id="@+id/layouyt_add_pet"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/layout_round_ebebeb"
                 android:orientation="vertical">

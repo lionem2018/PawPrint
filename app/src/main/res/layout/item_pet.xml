@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="320dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
     android:layout_height="120dp"
     android:id="@+id/framelayout_pet_item"
     android:layout_gravity="center">
@@ -8,9 +11,9 @@
     <LinearLayout
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:paddingLeft="100dp"
+        android:paddingLeft="92dp"
         android:orientation="vertical"
         android:background="@drawable/layout_round_ffffff"
         android:elevation="3dp">
@@ -48,7 +51,6 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_image_view_item_pet"
-        android:layout_marginLeft="10dp"
         android:layout_gravity="center_vertical"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:elevation="3dp"
