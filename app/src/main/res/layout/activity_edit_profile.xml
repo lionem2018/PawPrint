@@ -19,7 +19,7 @@
             android:paddingRight="15dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="◀돌아가기"
+            android:text="◀ 돌아가기"
             android:textSize="13dp"
             android:textColor="#686868"
             android:fontFamily="@font/nanumgothic"
@@ -49,31 +49,35 @@
             android:textStyle="bold"
             android:textColor="#686868"/>
 
-        <RelativeLayout
-            android:id="@+id/button_change_profile_image"
-            android:layout_width="140dp"
-            android:layout_height="140dp">
+            <RelativeLayout
+                android:id="@+id/button_change_profile_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="5dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circle_image_view"
-                android:layout_gravity="center"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:elevation="3dp"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                app:civ_border_width="5dp"
-                app:civ_border_color="@color/buttonVisibleStateColor"
-                android:src="@drawable/button_pick_picture" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circle_image_view"
+                    android:layout_gravity="center"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:elevation="3dp"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    app:civ_border_width="5dp"
+                    android:layout_centerInParent="true"
+                    app:civ_border_color="@color/buttonVisibleStateColor"
+                    android:src="@drawable/button_pick_picture" />
 
-            <View
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/layout_profile_circle_camera_icon"
-                android:elevation="5dp"/>
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/layout_profile_circle_camera_icon"
+                    android:elevation="5dp"/>
 
-        </RelativeLayout>
+            </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,6 +126,7 @@
                         android:fontFamily="@font/nanumgothic"/>
 
                     <TextView
+                        android:id="@+id/textview_profile_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_horizontal"
@@ -133,8 +138,8 @@
 
                     <Button
                         android:id="@+id/button_edit_name"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
@@ -157,6 +162,7 @@
                         android:fontFamily="@font/nanumgothic"/>
 
                     <TextView
+                        android:id="@+id/textview_profile_type"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_horizontal"
@@ -168,8 +174,8 @@
 
                     <Button
                         android:id="@+id/button_edit_type"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
@@ -192,6 +198,7 @@
                         android:fontFamily="@font/nanumgothic"/>
 
                     <TextView
+                        android:id="@+id/textview_profile_gender"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_horizontal"
@@ -203,8 +210,8 @@
 
                     <Button
                         android:id="@+id/button_edit_gender"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
@@ -227,6 +234,7 @@
                         android:fontFamily="@font/nanumgothic"/>
 
                     <TextView
+                        android:id="@+id/textview_profile_birthday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_horizontal"
@@ -238,8 +246,8 @@
 
                     <Button
                         android:id="@+id/button_edit_birthday"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/cal_icon" />
 
                 </LinearLayout>
@@ -262,6 +270,7 @@
                         android:fontFamily="@font/nanumgothic"/>
 
                     <TextView
+                        android:id="@+id/textview_profile_adoptday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_horizontal"
@@ -273,8 +282,8 @@
 
                     <Button
                         android:id="@+id/button_edit_adapt"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
                         android:background="@drawable/cal_icon" />
 
                 </LinearLayout>

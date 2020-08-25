@@ -21,7 +21,7 @@
             android:paddingRight="15dp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="◀돌아가기"
+            android:text="◀ 돌아가기"
             android:textSize="13dp"
             android:textColor="#686868"
             android:fontFamily="@font/nanumgothic"
