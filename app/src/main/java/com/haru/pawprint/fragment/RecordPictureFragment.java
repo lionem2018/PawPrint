@@ -33,7 +33,8 @@ public class RecordPictureFragment extends Fragment {
         });
 
         RelativeLayout bottomSheet = view.findViewById(R.id.bottomsheet_record_picture);
-        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        bottomSheetBehavior.setGestureInsetBottomIgnored(true);
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
