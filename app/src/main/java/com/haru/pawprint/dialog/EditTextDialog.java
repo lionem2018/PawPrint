@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -58,6 +59,13 @@ public class EditTextDialog extends Dialog {
         textViewDialogTitle = findViewById(R.id.textview_dialog_title);
         editText = findViewById(R.id.eidttext_dialog);
 
+        Button btnConfirm = findViewById(R.id.button_dialog_confirm);
 
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
     }
 }
