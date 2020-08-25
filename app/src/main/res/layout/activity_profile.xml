@@ -29,17 +29,18 @@
 
     </LinearLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="13dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="13dp"
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -200,6 +201,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="66dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -297,6 +299,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="vertical"
                     android:elevation="5dp"
                     android:background="@drawable/layout_round_ffffff">
@@ -347,6 +350,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
