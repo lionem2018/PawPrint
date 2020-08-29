@@ -2,35 +2,58 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_bottomsheet_overview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TimeStampActivity"
     android:background="@drawable/gradient"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".TimeStampActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp">
-        <TextView
-            android:id="@+id/textview_back"
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_go_back"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="16dp"
-            android:text="◀돌아가기"
-            android:textSize="13dp"
-            android:textColor="#686868"
-            android:fontFamily="@font/nanumgothic"
-            />
-    </LinearLayout>
+            app:layout_constraintBottom_toTopOf="@id/imageview_time_stamp_month"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/pic_example"
-        android:fitsSystemWindows="true"/>
+            <TextView
+                android:id="@+id/textview_back"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:fontFamily="@font/nanumgothic"
+                android:paddingLeft="15dp"
+                android:paddingTop="16dp"
+                android:paddingRight="15dp"
+                android:text="◀돌아가기"
+                android:textColor="#686868"
+                android:textSize="13dp" />
 
-    <include layout="@layout/bottomsheet_time_stamp_picture_list"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageview_time_stamp_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/pic_example"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/view_temp"
+            app:layout_constraintTop_toBottomOf="@id/layout_go_back"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <View
+            android:id="@+id/view_temp"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/bottomsheet_time_stamp_picture_list" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

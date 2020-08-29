@@ -1,6 +1,5 @@
 package com.haru.pawprint.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,26 +7,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.haru.pawprint.EditPictureActivity;
 import com.haru.pawprint.R;
 import com.haru.pawprint.RecordActivity;
-import com.haru.pawprint.RegisterPetActivity;
-import com.haru.pawprint.SelectPetActivity;
+
+import java.net.URI;
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ScreenSlidePagerAdapter extends RecyclerView.Adapter<ScreenSlidePagerAdapter.MyViewHolder> {
+public class CardSlidePagerAdapter extends RecyclerView.Adapter<CardSlidePagerAdapter.CardViewHolder> {
 
+    private ArrayList<URI> uriArrayList;
     private Context context;
 
-    public ScreenSlidePagerAdapter(Context context) {
+    public CardSlidePagerAdapter(Context context, ArrayList<URI> uriArrayList) {
         this.context = context;
+        this.uriArrayList = uriArrayList;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cardview_main_date, parent, false);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,26 +39,27 @@ public class ScreenSlidePagerAdapter extends RecyclerView.Adapter<ScreenSlidePag
             }
         });
 
-        return new MyViewHolder(view);
+        return new CardViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
+        holder.imgBanner.setBackgroundResource(R.drawable.pic_example);
     }
 
 
 
     @Override
     public int getItemCount() {
-        return 15;
+        return uriArrayList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class CardViewHolder extends RecyclerView.ViewHolder {
         ImageView imgBanner;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgBanner = itemView.findViewById(R.id.img_cardview);
+            imgBanner = itemView.findViewById(R.id.imageview_cardview);
         }
     }
 }

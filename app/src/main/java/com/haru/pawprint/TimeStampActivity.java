@@ -67,8 +67,8 @@ public class TimeStampActivity extends AppCompatActivity {
         RecyclerView recyclerView = bottomSheet.findViewById(R.id.recyclerview_time_stamp_picture_list);
         recyclerView.setLayoutManager(new GridLayoutManager(this, PICTURE_ROW));
         recyclerView.setAdapter(new TimeStampRecyclerViewAdapter(this, uriArrayList));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override

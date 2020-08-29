@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/layout_round_ffffff"
     android:orientation="vertical"
-    app:behavior_peekHeight="130dp"
+    app:behavior_peekHeight="350dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:elevation="3dp">
 

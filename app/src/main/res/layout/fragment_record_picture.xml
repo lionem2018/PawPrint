@@ -4,20 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
+
 
         <ImageView
             android:id="@+id/imageview_record_picture"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/pic_example" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/pic_example"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/view_temp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    </LinearLayout>
+        <View
+            android:id="@+id/view_temp"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include layout="@layout/bottomsheet_record_picture"/>
 

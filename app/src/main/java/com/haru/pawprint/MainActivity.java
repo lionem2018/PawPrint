@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.haru.pawprint.adapter.ScreenSlidePagerAdapter;
+import com.haru.pawprint.adapter.CardSlidePagerAdapter;
+
+import java.net.URI;
+import java.util.ArrayList;
 
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -28,7 +31,7 @@ public class MainActivity extends FragmentActivity {
     /**
      * The pager adapter, which provides the pages to the view pager widget.
      */
-    private ScreenSlidePagerAdapter pagerAdapter;
+    private CardSlidePagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,22 +105,18 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+        ArrayList<URI> uriArrayList = new ArrayList<>();
+        uriArrayList.add(URI.create(""));
+        uriArrayList.add(URI.create(""));
+        uriArrayList.add(URI.create(""));
+        uriArrayList.add(URI.create(""));
+        uriArrayList.add(URI.create(""));
+
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager2) findViewById(R.id.viewpager);
-        pagerAdapter = new ScreenSlidePagerAdapter(this);
+        pagerAdapter = new CardSlidePagerAdapter(this, uriArrayList);
         mPager.setAdapter(pagerAdapter);
         mPager.setOffscreenPageLimit(3);
-
-//        mPager.setPadding((int)((getResources().getDisplayMetrics().xdpi-244)), 0, (int)((getResources().getDisplayMetrics().xdpi-244)), 0);
-//        mPager.setPadding(24, 0, 24, 0);
-
-//        mPager.setPageMargin(24);
-//        mPager.setPageTransformer(new MarginPageTransformer(((int)((getResources().getDisplayMetrics().xdpi-244)))));
-
-        float pageMarginPx = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
-        float pagerWidth = getResources().getDimensionPixelOffset(R.dimen.pagerWidth);
-        float screenWidth = getResources().getDisplayMetrics().widthPixels;
-        float offsetPx = screenWidth - pageMarginPx - pagerWidth;
 
         float pageMargin = getResources().getDimensionPixelOffset(R.dimen.pageMargin);
         float pageOffset = getResources().getDimensionPixelOffset(R.dimen.offset);
