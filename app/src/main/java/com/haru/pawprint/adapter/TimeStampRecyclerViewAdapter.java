@@ -2,6 +2,7 @@ package com.haru.pawprint.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.haru.pawprint.CalendarActivity;
+import com.haru.pawprint.PawPrintApplication;
 import com.haru.pawprint.R;
 import com.haru.pawprint.TimeStampActivity;
 import com.haru.pawprint.dialog.HealthItemDialog;
@@ -27,9 +29,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class TimeStampRecyclerViewAdapter extends RecyclerView.Adapter<TimeStampRecyclerViewAdapter.TimeStampViewHolder> {
 
     private Context context;
-    private ArrayList<URI> uriArrayList;
+    private ArrayList<Uri> uriArrayList;
 
-    public TimeStampRecyclerViewAdapter(@NonNull Context context, ArrayList<URI> uriArrayList){
+    public TimeStampRecyclerViewAdapter(@NonNull Context context, ArrayList<Uri> uriArrayList){
         this.context = context;
         this.uriArrayList = uriArrayList;
     }
@@ -48,8 +50,7 @@ public class TimeStampRecyclerViewAdapter extends RecyclerView.Adapter<TimeStamp
 
     @Override
     public void onBindViewHolder(@NonNull TimeStampViewHolder holder, int position) {
-//        holder.imageView.setImageURI(uriArrayList.get(position));
-        holder.imageView.setImageResource(R.drawable.pic_example);
+        holder.imageView.setImageURI(uriArrayList.get(position));
     }
 
     class TimeStampViewHolder extends RecyclerView.ViewHolder {

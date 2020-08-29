@@ -2,6 +2,7 @@ package com.haru.pawprint.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class CardSlidePagerAdapter extends RecyclerView.Adapter<CardSlidePagerAdapter.CardViewHolder> {
 
-    private ArrayList<URI> uriArrayList;
+    private ArrayList<Uri> uriArrayList;
     private Context context;
 
-    public CardSlidePagerAdapter(Context context, ArrayList<URI> uriArrayList) {
+    public CardSlidePagerAdapter(Context context, ArrayList<Uri> uriArrayList) {
         this.context = context;
         this.uriArrayList = uriArrayList;
     }
@@ -44,7 +45,7 @@ public class CardSlidePagerAdapter extends RecyclerView.Adapter<CardSlidePagerAd
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        holder.imgBanner.setBackgroundResource(R.drawable.pic_example);
+        holder.imgBanner.setImageURI(uriArrayList.get(position));
     }
 
 

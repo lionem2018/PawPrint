@@ -2,6 +2,7 @@ package com.haru.pawprint.fragment;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.haru.pawprint.EditPictureActivity;
+import com.haru.pawprint.PawPrintApplication;
 import com.haru.pawprint.R;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ public class RecordPictureFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_record_picture, container, false);
         ImageView imageView = view.findViewById(R.id.imageview_record_picture);
 
+        imageView.setImageURI(Uri.parse(((PawPrintApplication)getContext().getApplicationContext()).getCurrentPet().getPetProfileUri()));  // just test
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

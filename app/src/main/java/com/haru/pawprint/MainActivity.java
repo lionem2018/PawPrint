@@ -1,6 +1,7 @@
 package com.haru.pawprint;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -106,12 +107,9 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        ArrayList<URI> uriArrayList = new ArrayList<>();
-        uriArrayList.add(URI.create(""));
-        uriArrayList.add(URI.create(""));
-        uriArrayList.add(URI.create(""));
-        uriArrayList.add(URI.create(""));
-        uriArrayList.add(URI.create(""));
+        ArrayList<Uri> uriArrayList = new ArrayList<>();
+        for(int i = 0; i < 3; i++)
+            uriArrayList.add(Uri.parse(((PawPrintApplication)getApplicationContext()).getCurrentPet().getPetProfileUri()));  // just test
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager2) findViewById(R.id.viewpager);

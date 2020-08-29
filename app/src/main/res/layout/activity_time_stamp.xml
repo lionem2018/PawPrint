@@ -39,7 +39,7 @@
             android:id="@+id/imageview_time_stamp_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/pic_example"
+            android:background="@drawable/icon"
             app:layout_constrainedHeight="true"
             app:layout_constraintBottom_toTopOf="@id/view_temp"
             app:layout_constraintTop_toBottomOf="@id/layout_go_back"

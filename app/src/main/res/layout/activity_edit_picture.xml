@@ -69,7 +69,7 @@
             android:layout_marginRight="47dp"
             android:layout_marginLeft="47dp"
             android:layout_marginTop="22dp"
-            android:background="@drawable/pic_example"
+            android:background="@drawable/icon"
             android:elevation="10dp"
             android:visibility="gone"/>
 

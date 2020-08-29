@@ -32,22 +32,12 @@ public class SelectPetActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pet);
 
+        PawPrintApplication application = (PawPrintApplication) getApplicationContext();
+
         // 반려동물 리스트뷰 가져오기
         listViewPet = (ListView) findViewById(R.id.listView_pet_list);
         // 반려동물 리스트뷰 어댑터 생성
-        petArrayAdapter = new PetArrayAdapter(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 메인 화면으로 이동
-                startActivity(new Intent(getApplication(), MainActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-
-                // 반려동물 선택 액티비티를 스텍에서 제거
-                SelectPetActivity.this.finish();
-            }
-        });
+        petArrayAdapter = new PetArrayAdapter(this);
         // 반려동물 리스트뷰 어댑터 지정
         listViewPet.setAdapter(petArrayAdapter);
 

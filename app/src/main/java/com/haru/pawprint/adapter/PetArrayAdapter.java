@@ -1,6 +1,7 @@
 package com.haru.pawprint.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.haru.pawprint.MainActivity;
+import com.haru.pawprint.PawPrintApplication;
 import com.haru.pawprint.R;
+import com.haru.pawprint.SelectPetActivity;
 import com.haru.pawprint.database.entities.Pet;
 
 import java.util.ArrayList;
@@ -21,10 +25,10 @@ public class PetArrayAdapter extends BaseAdapter {
     // 버튼 리스트로 보여줄 반려동물 리스트
     private ArrayList<Pet> items = new ArrayList<Pet>();
 
-    private View.OnClickListener clickListener;
+    private SelectPetActivity activity;
 
-    public PetArrayAdapter(View.OnClickListener clickListener){
-        this.clickListener = clickListener;
+    public PetArrayAdapter(SelectPetActivity activity){
+        this.activity = activity;
     }
 
     // 리스트 아이템 개수
@@ -54,7 +58,20 @@ public class PetArrayAdapter extends BaseAdapter {
         textViewPetName.setText(petItem.getPetName());
         textViewPetType.setText(petItem.getPetType());
 
-        view.setOnClickListener(clickListener);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((PawPrintApplication)activity.getApplicationContext()).setCurrentPet(petItem);
+                // 메인 화면으로 이동
+                activity.startActivity(new Intent(activity.getApplication(), MainActivity.class));
+
+                // Acivity 전환 효과
+                activity.overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                // 반려동물 선택 액티비티를 스텍에서 제거
+                activity.finish();
+            }
+        });
 
         return view;
     }
