@@ -38,9 +38,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingLanguageActiviity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -48,9 +45,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingAlarmActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -58,9 +52,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingLockActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -68,9 +59,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingBackupActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -78,9 +66,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingRemoveAllActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -88,9 +73,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingBugReportActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
 
@@ -98,9 +80,6 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplication(), SettingOpenSourceActivity.class));
-
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.in_right, R.anim.out_left);
             }
         });
     }

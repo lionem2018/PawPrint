@@ -18,8 +18,6 @@ public class SettingBackupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                // Acivity 전환 효과
-                overridePendingTransition(R.anim.out_right, R.anim.in_left);
             }
         });
     }
