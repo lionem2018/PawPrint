@@ -31,8 +31,10 @@
 
         <ListView
             android:id="@+id/listView_pet_list"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:choiceMode="singleChoice"/>
@@ -41,8 +43,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="120dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_gravity="center"
             android:orientation="vertical"
             android:gravity="center">
@@ -53,6 +55,8 @@
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/layout_round_ebebeb"
                 android:orientation="vertical">
 
