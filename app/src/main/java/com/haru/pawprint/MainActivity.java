@@ -3,6 +3,7 @@ package com.haru.pawprint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,13 +43,13 @@ public class MainActivity extends FragmentActivity {
         TextView btnBack = findViewById(R.id.textview_back);
 
         // 설정 화면 버튼
-        Button btnSetting = findViewById(R.id.button_setting);
+        ImageButton btnSetting = findViewById(R.id.button_setting);
         // 펫 프로필 버튼
-        Button btnProfile = findViewById(R.id.button_profile);
+        ImageButton btnProfile = findViewById(R.id.button_profile);
         // 캘린더 버튼
-        Button btnCalendar = findViewById(R.id.button_calendar);
+        ImageButton btnCalendar = findViewById(R.id.button_calendar);
         // 타임 스탬프 버튼
-        Button btnTimeStamp = findViewById(R.id.button_timestamp);
+        ImageButton btnTimeStamp = findViewById(R.id.button_timestamp);
 
         // 펫 선택 화면으로 이동
         btnBack.setOnClickListener(new View.OnClickListener() {

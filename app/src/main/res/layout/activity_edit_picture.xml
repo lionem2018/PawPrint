@@ -130,7 +130,7 @@
             android:maxLength="30"
             android:fontFamily="@font/nanumgothic"
             android:singleLine="true"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             />
 
         <EditText

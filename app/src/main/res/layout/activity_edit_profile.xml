@@ -135,11 +135,11 @@
                         android:fontFamily="@font/nanumgothic"
                         android:layout_weight="1"/>
 
-                    <Button
+                    <ImageButton
                         android:id="@+id/button_edit_name"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:background="@drawable/cal_icon" />
+                        android:background="@drawable/ic_calendar" />
 
                 </LinearLayout>
 
@@ -171,11 +171,11 @@
                         android:fontFamily="@font/nanumgothic"
                         android:layout_weight="1"/>
 
-                    <Button
-                        android:id="@+id/button_edit_type"
+                    <ImageButton
+                        android:id="@+id/button_edit_name"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:background="@drawable/cal_icon" />
+                        android:background="@drawable/ic_calendar" />
 
                 </LinearLayout>
 
@@ -207,11 +207,11 @@
                         android:fontFamily="@font/nanumgothic"
                         android:layout_weight="1"/>
 
-                    <Button
-                        android:id="@+id/button_edit_gender"
+                    <ImageButton
+                        android:id="@+id/button_edit_name"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:background="@drawable/cal_icon" />
+                        android:background="@drawable/ic_calendar" />
 
                 </LinearLayout>
 
@@ -243,11 +243,11 @@
                         android:fontFamily="@font/nanumgothic"
                         android:layout_weight="1"/>
 
-                    <Button
-                        android:id="@+id/button_edit_birthday"
+                    <ImageButton
+                        android:id="@+id/button_edit_name"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:background="@drawable/cal_icon" />
+                        android:background="@drawable/ic_calendar" />
 
                 </LinearLayout>
 
@@ -279,11 +279,11 @@
                         android:fontFamily="@font/nanumgothic"
                         android:layout_weight="1"/>
 
-                    <Button
-                        android:id="@+id/button_edit_adapt"
+                    <ImageButton
+                        android:id="@+id/button_edit_name"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:background="@drawable/cal_icon" />
+                        android:background="@drawable/ic_calendar" />
 
                 </LinearLayout>
 

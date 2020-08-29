@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.haru.pawprint.dialog.EditTextDialog;
@@ -21,7 +22,7 @@ public class EditProfileActivity extends AppCompatActivity {
         editTextDialog.setCancelable(true);
 
         TextView btnBack = findViewById(R.id.textview_back);
-        Button btnEditName = findViewById(R.id.button_edit_name);
+        ImageButton btnEditName = findViewById(R.id.button_edit_name);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

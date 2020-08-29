@@ -17,15 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/pic_example"
-            app:layout_constrainedHeight="true"
             app:layout_constraintBottom_toTopOf="@id/view_temp"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constrainedHeight="true"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <View
             android:id="@+id/view_temp"
             android:layout_width="match_parent"
             android:layout_height="110dp"
+            app:layout_constraintTop_toBottomOf="@id/imageview_record_picture"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 

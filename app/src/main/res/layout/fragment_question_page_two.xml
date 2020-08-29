@@ -102,7 +102,7 @@
                 android:id="@+id/button_cal_birthday"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/cal_icon"/>
+                android:background="@drawable/ic_calendar"/>
 
         </LinearLayout>
 
@@ -144,7 +144,7 @@
                 android:id="@+id/button_cal_adopt"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/cal_icon"/>
+                android:background="@drawable/ic_calendar"/>
 
         </LinearLayout>
 
