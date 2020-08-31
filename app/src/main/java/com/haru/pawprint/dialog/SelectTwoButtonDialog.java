@@ -2,56 +2,37 @@ package com.haru.pawprint.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.haru.pawprint.R;
-import com.haru.pawprint.RecordActivity;
-import com.haru.pawprint.adapter.DialogHealthListItemAdapter;
-
-import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * TODO: document your custom view class.
  */
-public class EditTextDialog extends Dialog {
+public class SelectTwoButtonDialog extends Dialog {
 
     private Context context;
 
     private TextView textViewDialogTitle;
-    private EditText editText;
+    private RadioGroup radioGroup;
 
-    public EditTextDialog(@NonNull Context context) {
+    public SelectTwoButtonDialog(@NonNull Context context) {
         super(context);
 
         this.context = context;
     }
 
-    public void setText(@NonNull String title, @NonNull String editTextHint, String editTextDefaultText)
-    {
+    public void setText(@NonNull String title){
         textViewDialogTitle.setText(title);
-        editText.setHint(editTextHint);
-        if(editTextDefaultText != null) {
-            editText.setText(editTextDefaultText);
-            editText.setSelection(editText.getText().length());
-        }
-    }
-
-    public void setEditTextMaxLength(@NonNull int maxLength)
-    {
-        editText.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
     }
 
     @Override
@@ -64,10 +45,10 @@ public class EditTextDialog extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getWindow().setAttributes(layoutParams);
 
-        setContentView(R.layout.dialog_edit_text);
+        setContentView(R.layout.dialog_select_two_button);
 
         textViewDialogTitle = findViewById(R.id.textview_dialog_title);
-        editText = findViewById(R.id.eidttext_dialog);
+        radioGroup = findViewById(R.id.radiogroup_gender);
 
         Button btnConfirm = findViewById(R.id.button_dialog_confirm);
 

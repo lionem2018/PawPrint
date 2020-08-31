@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.haru.pawprint.dialog.EditTextDialog;
+import com.haru.pawprint.dialog.SelectTwoButtonDialog;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -21,8 +22,14 @@ public class EditProfileActivity extends AppCompatActivity {
         editTextDialog.setCanceledOnTouchOutside(true);
         editTextDialog.setCancelable(true);
 
+        SelectTwoButtonDialog selectTwoButtonDialog = new SelectTwoButtonDialog(this);
+        selectTwoButtonDialog.setCanceledOnTouchOutside(true);
+        selectTwoButtonDialog.setCancelable(true);
+
         TextView btnBack = findViewById(R.id.textview_back);
         ImageButton btnEditName = findViewById(R.id.button_edit_name);
+        ImageButton btnEditType = findViewById(R.id.button_edit_type);
+        ImageButton btnEditGender = findViewById(R.id.button_edit_gender);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +45,14 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editTextDialog.show();
                 editTextDialog.setText("반려동물 이름 수정", "이름을 입력하세요.", "코페르니쿠스");
+                editTextDialog.setEditTextMaxLength(8);
+            }
+        });
+
+        btnEditGender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectTwoButtonDialog.show();
             }
         });
     }

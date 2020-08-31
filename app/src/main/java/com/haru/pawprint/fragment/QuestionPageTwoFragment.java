@@ -3,8 +3,6 @@ package com.haru.pawprint.fragment;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.haru.pawprint.R;
 
@@ -62,7 +59,7 @@ public class QuestionPageTwoFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_question_page_two, container, false);
 
         // 성별 라디오 그룹 객체 가져오기
-        radioGroupGender = (RadioGroup) view.findViewById(R.id.radio_group_gender);
+        radioGroupGender = (RadioGroup) view.findViewById(R.id.radiogroup_gender);
         radioButtonMale = (RadioButton) view.findViewById(R.id.radio_button_male);
         radioButtonFemale = (RadioButton) view.findViewById(R.id.radio_button_female);
         radioGroupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

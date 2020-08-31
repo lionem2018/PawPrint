@@ -24,7 +24,7 @@
             android:id="@+id/textview_dialog_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="반려동물 이름 입력"
+            android:text="반려동물 성별 선택"
             android:textColor="#686868"
             android:textSize="25dp"
             android:fontFamily="@font/nanumgothic"
@@ -40,19 +40,44 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/eidttext_dialog"
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/radiogroup_gender"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dialog_title"
-        android:hint="입력해주세요."
-        android:textColorHint="#9E9E9E"
-        android:text="코페르니쿠스"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:fontFamily="@font/nanumgothic"
-        android:singleLine="true"/>
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_button_male"
+            android:layout_width="140dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="14dp"
+            android:button="@null"
+            android:text="남자아이"
+            android:textColor="@color/buttonTextColor"
+            android:fontFamily="@font/nanumgothic"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:background="@drawable/radio_button_normal"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_button_female"
+            android:layout_width="140dp"
+            android:layout_height="36dp"
+            android:button="@null"
+            android:text="여자아이"
+            android:textColor="@color/buttonTextColor"
+            android:fontFamily="@font/nanumgothic"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:background="@drawable/radio_button_normal"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/button_dialog_confirm"
