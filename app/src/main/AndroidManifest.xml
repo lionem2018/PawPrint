@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".PawPrintApplication">
         <activity android:name=".SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>

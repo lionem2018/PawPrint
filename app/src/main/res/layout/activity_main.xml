@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/layout_menu">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textview_back"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
@@ -73,7 +73,7 @@
 
     </LinearLayout>
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textview_main_title"
         android:layout_gravity="center"
         android:layout_width="match_parent"
