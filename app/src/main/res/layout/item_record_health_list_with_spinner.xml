@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/layout_record_health_list_item"
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/layout_record_health_list_item"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_marginTop="8dp"
-    android:gravity="center">
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     
     <Spinner
         android:id="@+id/spinner_record_health_list_item"
@@ -16,12 +16,18 @@
         android:layout_gravity="center_vertical"
         android:layout_marginRight="12dp"
         android:popupBackground="@drawable/layout_round_ffffff"
-        android:background="@null"/>
+        android:background="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/edittext_record_health_list_item"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"/>
     
     <EditText
         android:id="@+id/edittext_record_health_list_item"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginRight="12dp"
         android:textSize="16dp"
         android:textColor="#686868"
         android:fontFamily="@font/nanumgothic"
@@ -29,6 +35,23 @@
         android:textColorHint="#959595"
         android:singleLine="true"
         android:imeOptions="actionDone"
-        android:maxLength="20"/>
+        android:maxLength="20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/spinner_record_health_list_item"
+        app:layout_constraintRight_toLeftOf="@id/imagebutton_remove"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constrainedWidth="true" />
 
-</LinearLayout>
+    <ImageButton
+        android:id="@+id/imagebutton_remove"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_exit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/edittext_record_health_list_item"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

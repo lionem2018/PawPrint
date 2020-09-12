@@ -12,10 +12,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 
 import com.haru.pawprint.R;
-import com.haru.pawprint.RecordActivity;
-import com.haru.pawprint.fragment.RecordHealthFragment;
 
-import java.text.Format;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
