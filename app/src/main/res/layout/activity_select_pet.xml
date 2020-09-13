@@ -1,105 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:layout_alignParentTop="true"
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageview_logo"
+        android:layout_width="114dp"
+        android:layout_height="33.18dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/title"
+        app:layout_constraintBottom_toTopOf="@id/textview_page_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/textview_page_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/lottemartdreambold"
+        android:text="@string/title_select_pet"
+        android:textAlignment="center"
+        android:textColor="@color/pageNameColor"
+        android:textSize="35dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/layout_pet_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview_logo"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <LinearLayout
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_gravity="center"
-            android:layout_width="114dp"
-            android:layout_height="33.18dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/title"/>
-
-        <TextView
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
-            android:text="@string/title_select_pet"
-            android:textAlignment="center"
-            android:textColor="@color/pageNameColor"
-            android:fontFamily="@font/lottemartdreambold"
-            android:textSize="35dp"/>
+        android:id="@+id/layout_pet_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_page_title"
+        app:layout_constraintVertical_chainStyle="spread_inside">
 
         <ListView
             android:id="@+id/listView_pet_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
             android:layout_gravity="center"
+            android:choiceMode="singleChoice"
             android:orientation="vertical"
-            android:choiceMode="singleChoice"/>
+            android:overScrollMode="never"/>
 
         <!-- add pet custom button -->
+
         <LinearLayout
+            android:id="@+id/layout_add_pet"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_round_ebebeb"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/layouyt_add_pet"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/layout_round_ebebeb"
-                android:orientation="vertical">
+                android:fontFamily="@font/nanumgothic"
+                android:text="+"
+                android:textColor="#D7D7D7"
+                android:textSize="34dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="+"
-                    android:textSize="34dp"
-                    android:textColor="#D7D7D7"
-                    android:fontFamily="@font/nanumgothic"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/button_add_pet"
-                    android:textSize="12dp"
-                    android:textColor="#CBCBCB"
-                    android:fontFamily="@font/nanumgothic"/>
-
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nanumgothic"
+                android:text="@string/button_add_pet"
+                android:textColor="#CBCBCB"
+                android:textSize="12dp" />
 
         </LinearLayout>
-
     </LinearLayout>
 
     <LinearLayout
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:paddingBottom="16dp"
-        android:layout_width="wrap_content"
+        android:id="@+id/layout_bottom_text"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_pet_list"
+        app:layout_constraintVertical_chainStyle="spread_inside">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumgothic"
             android:text="@string/hint_select_pet"
-            android:textSize="12dp"
             android:textColor="@color/editTextHintColor"
-            android:fontFamily="@font/nanumgothic"/>
+            android:textSize="12dp" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

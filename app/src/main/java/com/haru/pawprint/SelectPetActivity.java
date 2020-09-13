@@ -45,7 +45,7 @@ public class SelectPetActivity extends BaseActivity{
         db = AppDatabase.getAppDataBase(this);
 
         // 펫 추가 버튼 가져오기
-        linearLayoutButtonAddPet = (LinearLayout) findViewById(R.id.layouyt_add_pet);
+        linearLayoutButtonAddPet = (LinearLayout) findViewById(R.id.layout_add_pet);
         // 펫 추가 버튼 클릭 리스너 등록
         linearLayoutButtonAddPet.setOnClickListener(new View.OnClickListener() {
             @Override
