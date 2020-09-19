@@ -46,6 +46,7 @@ public class TimeStampActivity extends AppCompatActivity {
         BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
 
         uriArrayList = new ArrayList<Uri>();
+        for(int i = 0; i < 31; i++)
             uriArrayList.add(Uri.parse(((PawPrintApplication)getApplicationContext()).getCurrentPet().getPetProfileUri()));  // just test
 
         RecyclerView recyclerView = bottomSheet.findViewById(R.id.recyclerview_time_stamp_picture_list);

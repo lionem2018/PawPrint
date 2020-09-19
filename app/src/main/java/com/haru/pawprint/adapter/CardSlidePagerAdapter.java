@@ -2,16 +2,22 @@ package com.haru.pawprint.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import com.haru.pawprint.PawPrintApplication;
 import com.haru.pawprint.R;
 import com.haru.pawprint.RecordActivity;
 
-import java.net.URI;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -45,7 +51,23 @@ public class CardSlidePagerAdapter extends RecyclerView.Adapter<CardSlidePagerAd
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        holder.imgBanner.setImageURI(uriArrayList.get(position));
+        Uri imageUri = uriArrayList.get(position);
+
+        holder.imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                Bitmap bitmap = null;
+                try {
+                    Log.d("size", (int) holder.imageView.getHeight()+"");
+                    bitmap = PawPrintApplication.getBitmapFromUri(context, imageUri, (int) holder.imageView.getHeight());
+//            bitmap = PawPrintApplication.decodeSampledBitmapFromResource(imageUri, Resources.getSystem().getDisplayMetrics().widthPixels, Resources.getSystem().getDisplayMetrics().widthPixels);
+//            bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(),imageUri);
+                    holder.imageView.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
 
@@ -56,11 +78,11 @@ public class CardSlidePagerAdapter extends RecyclerView.Adapter<CardSlidePagerAd
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgBanner;
+        ImageView imageView;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgBanner = itemView.findViewById(R.id.imageview_cardview);
+            imageView = itemView.findViewById(R.id.imageview_cardview);
         }
     }
 }

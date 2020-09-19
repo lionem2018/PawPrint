@@ -77,7 +77,7 @@ public class DateHealthListItemAdapter extends RecyclerView.Adapter<DateHealthLi
 
     @Override
     public int getItemCount() {
-        return healthListItems.size();
+        return Math.min(healthListItems.size(), 3);
     }
 
     static class DateHealthListItemViewHolder extends RecyclerView.ViewHolder {

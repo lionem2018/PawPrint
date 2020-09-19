@@ -73,8 +73,6 @@ public class CalendarRecyclerViewAdapter extends RecyclerView.Adapter<CalendarRe
         healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
         healthList.add(new DialogHealthListItemAdapter.HealthListItem(5, "약", "심장사상충"));
 
-
-
         if (position % RecordCalendar.DAYS_OF_WEEK == 0) holder.textView.setTextColor(Color.parseColor("#DC0000"));
         else holder.textView.setTextColor(Color.parseColor("#1C1C1C"));
 

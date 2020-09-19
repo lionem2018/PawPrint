@@ -40,6 +40,8 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        PawPrintApplication.setContext(this);
+
         // 돌아가기 버튼
         TextView btnBack = findViewById(R.id.textview_back);
 
@@ -108,7 +110,7 @@ public class MainActivity extends FragmentActivity {
         });
 
         ArrayList<Uri> uriArrayList = new ArrayList<>();
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 31; i++)
             uriArrayList.add(Uri.parse(((PawPrintApplication)getApplicationContext()).getCurrentPet().getPetProfileUri()));  // just test
 
         // Instantiate a ViewPager and a PagerAdapter.

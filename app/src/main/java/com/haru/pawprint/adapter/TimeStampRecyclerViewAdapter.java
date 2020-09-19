@@ -1,8 +1,10 @@
 package com.haru.pawprint.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,7 @@ import com.haru.pawprint.TimeStampActivity;
 import com.haru.pawprint.dialog.HealthItemDialog;
 import com.haru.pawprint.util.RecordCalendar;
 
+import java.io.IOException;
 import java.net.URI;
 import java.sql.Time;
 import java.util.ArrayList;
@@ -50,7 +53,23 @@ public class TimeStampRecyclerViewAdapter extends RecyclerView.Adapter<TimeStamp
 
     @Override
     public void onBindViewHolder(@NonNull TimeStampViewHolder holder, int position) {
-        holder.imageView.setImageURI(uriArrayList.get(position));
+        Uri imageUri = uriArrayList.get(position);
+
+        holder.imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                Bitmap bitmap = null;
+                try {
+                    Log.d("size", (int) holder.imageView.getHeight()+"");
+                    bitmap = PawPrintApplication.getBitmapFromUri(context, imageUri, (int) holder.imageView.getHeight());
+//            bitmap = PawPrintApplication.decodeSampledBitmapFromResource(imageUri, Resources.getSystem().getDisplayMetrics().widthPixels, Resources.getSystem().getDisplayMetrics().widthPixels);
+//            bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(),imageUri);
+                    holder.imageView.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     class TimeStampViewHolder extends RecyclerView.ViewHolder {
