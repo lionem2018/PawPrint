@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/layout_dummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,18 +137,24 @@
                         android:weightSum="1">
 
                         <EditText
+                            android:id="@+id/edittext_daily_weight"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.7"
                             android:fontFamily="@font/nanumgothic"
                             android:gravity="right"
-                            android:hint="000"
+                            android:hint="123.45"
                             android:textAlignment="gravity"
                             android:textColor="#3d3d3d"
                             android:textColorHint="#c9c9c9"
                             android:textSize="15dp"
                             android:textStyle="bold"
-                            android:autofillHints="false" />
+                            android:singleLine="true"
+                            android:autofillHints="false"
+                            android:imeOptions="actionDone"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"/>
 
                         <TextView
                             android:layout_width="0dp"

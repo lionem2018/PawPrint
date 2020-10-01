@@ -53,31 +53,37 @@ public class TimeStampRecyclerViewAdapter extends RecyclerView.Adapter<TimeStamp
 
     @Override
     public void onBindViewHolder(@NonNull TimeStampViewHolder holder, int position) {
-        Uri imageUri = uriArrayList.get(position);
 
-        holder.imageView.post(new Runnable() {
-            @Override
-            public void run() {
-                Bitmap bitmap = null;
-                try {
-                    Log.d("size", (int) holder.imageView.getHeight()+"");
-                    bitmap = PawPrintApplication.getBitmapFromUri(context, imageUri, (int) holder.imageView.getHeight());
-//            bitmap = PawPrintApplication.decodeSampledBitmapFromResource(imageUri, Resources.getSystem().getDisplayMetrics().widthPixels, Resources.getSystem().getDisplayMetrics().widthPixels);
-//            bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(),imageUri);
-                    holder.imageView.setImageBitmap(bitmap);
-                } catch (IOException e) {
-                    e.printStackTrace();
+        if(position == getItemCount()-1)
+            holder.layoutAddItem.setVisibility(View.VISIBLE);
+        else {
+            holder.layoutAddItem.setVisibility(View.GONE);
+
+            Uri imageUri = uriArrayList.get(position);
+            holder.imageView.post(new Runnable() {
+                @Override
+                public void run() {
+                    Bitmap bitmap = null;
+                    try {
+                        Log.d("size", (int) holder.imageView.getHeight() + "");
+                        bitmap = PawPrintApplication.getBitmapFromUri(context, imageUri, (int) holder.imageView.getHeight());
+                        holder.imageView.setImageBitmap(bitmap);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     class TimeStampViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+        LinearLayout layoutAddItem;
 
         public TimeStampViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageview_item_time_stamp);
+            layoutAddItem = itemView.findViewById(R.id.layout_add_item_time_stamp);
         }
     }
 }

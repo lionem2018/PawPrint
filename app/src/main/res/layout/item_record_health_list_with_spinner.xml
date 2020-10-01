@@ -35,6 +35,8 @@
         android:textColorHint="#959595"
         android:singleLine="true"
         android:imeOptions="actionDone"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
         android:maxLength="20"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

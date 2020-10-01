@@ -22,6 +22,8 @@
         android:maxLength="20"
         android:singleLine="true"
         android:imeOptions="actionDone"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

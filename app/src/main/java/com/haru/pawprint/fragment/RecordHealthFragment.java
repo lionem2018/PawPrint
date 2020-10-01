@@ -1,10 +1,16 @@
 package com.haru.pawprint.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.haru.pawprint.R;
 import com.haru.pawprint.adapter.RecordHealthButtonListAdapter;
@@ -36,6 +42,8 @@ public class RecordHealthFragment extends Fragment {
         Button buttonAddMealItem = view.findViewById(R.id.button_add_meal_item);
         Button buttonAddHospitalItem = view.findViewById(R.id.button_add_hospital_item);
         Button buttonAddETCItem = view.findViewById(R.id.button_add_etc_item);
+
+        EditText editTextWeight = view.findViewById(R.id.edittext_daily_weight);
 
         RecyclerView recyclerViewListPlay = view.findViewById(R.id.recyclerview_list_play);
         RecyclerView recyclerViewListMeal = view.findViewById(R.id.recyclerview_list_meal);
@@ -82,6 +90,32 @@ public class RecordHealthFragment extends Fragment {
             public void onClick(View view) {
                 etcList.add("");
                 recyclerViewListETC.getAdapter().notifyItemInserted(etcList.size()-1);
+            }
+        });
+
+        editTextWeight.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId== EditorInfo.IME_ACTION_DONE){
+                    //Clear focus here from edittext
+                    v.clearFocus();
+                }
+                return false;
+            }
+        });
+
+        // set OnFocusChangeListener on dummy layout for hiding keyboard
+        view.findViewById(R.id.layout_dummy).setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+
+                    // ** save weight **
+
+                    // hide keyboard
+                    InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
             }
         });
 
