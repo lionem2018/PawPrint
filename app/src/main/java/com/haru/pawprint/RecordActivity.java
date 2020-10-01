@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.haru.pawprint.fragment.RecordHealthFragment;
 import com.haru.pawprint.fragment.RecordPictureFragment;
@@ -54,6 +55,15 @@ public class RecordActivity extends AppCompatActivity {
 
         btnGoRecordPicture.setVisibility(GONE);
         btnGoRecordHealth.setVisibility(View.VISIBLE);
+
+        // back button
+        TextView btnBack = findViewById(R.id.textview_back);
+        btnBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // 프래그먼트 상태 커밋
         fragmentTransaction.commit();
